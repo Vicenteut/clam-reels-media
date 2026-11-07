@@ -1,0 +1,10 @@
+Why do your solar panels switch off when the power goes out, even in full sun? To see why, let's build a system on one roof.
+One panel on your roof can light a few bulbs. But your fridge needs far more, so you line up ten panels and plug each one into the next. Ten panels, ten times the power. That's wiring them in series.
+But lying flat, they collect dust and rainwater, and the sun hits them at an angle. So you bolt them onto rails tilted toward the sun. Now the light hits them head-on and the rain runs off. That's the racking.
+But panels make direct current, which only flows one way, and your house runs on alternating current, which flips back and forth many times a second. So you add a box that flips it for you. That's the inverter.
+But at night the panels make nothing. So you stay connected to the grid: the sun by day, the power company by night. That's a grid-tied system.
+Then at noon you make more than you use, and the extra flows out to the street. So in many places the utility fits a meter that counts both ways, and you pay the difference. That's net metering.
+But one afternoon the shadow of the water tank covers a single panel, and because they're in a row, it chokes the whole line, like stepping on a hose. The little black box behind each panel gives the power a way around the shaded cells. Those are bypass diodes.
+And here's the answer to the first question. If your panels kept pushing power into the street during a blackout, a line worker fixing the cables could get shocked. So the inverter watches the grid, and when it goes down, it switches itself off. That's anti-islanding.
+Want lights during a blackout? Swap in a hybrid inverter and add batteries. They store the extra from noon, and when the grid fails, the inverter cuts your house off from the street and runs it on the batteries. That's a hybrid system.
+Know someone thinking about solar? Send them this. Comment SOLAR and I'll send you the whole system in one diagram.
