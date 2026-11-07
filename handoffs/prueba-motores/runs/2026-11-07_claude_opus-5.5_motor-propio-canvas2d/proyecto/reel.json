@@ -1,0 +1,18 @@
+{
+  "style": "classic",
+  "name": "prueba-motores-claude",
+  "presenter": false,
+  "captions": {
+    "emphasize": [
+      "direct",
+      "alternating",
+      "inverter"
+    ],
+    "emphasis": "#FFFFFF"
+  },
+  "theme": {
+    "accent": "#FF7A1A"
+  },
+  "language": "en",
+  "variant": "v1"
+}
