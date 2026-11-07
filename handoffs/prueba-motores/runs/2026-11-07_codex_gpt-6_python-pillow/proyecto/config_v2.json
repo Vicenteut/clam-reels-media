@@ -1,0 +1,6 @@
+{
+  "version": "v2",
+  "cable_route": "wall",
+  "box_delay_frames": 15,
+  "inverter_label": "INVERTER · DC → AC"
+}

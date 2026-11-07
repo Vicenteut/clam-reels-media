@@ -1,0 +1,163 @@
+{
+  "v1": {
+    "panels": {
+      "roi": [
+        310,
+        659,
+        30,
+        8
+      ],
+      "threshold_type": "white",
+      "minimum_pixels": 8,
+      "first_visible_frame": 10,
+      "expected_frame": 10,
+      "passed": true
+    },
+    "dc_label": {
+      "roi": [
+        288,
+        930,
+        70,
+        45
+      ],
+      "threshold_type": "amber",
+      "minimum_pixels": 40,
+      "first_visible_frame": 35,
+      "expected_frame": 35,
+      "passed": true
+    },
+    "house": {
+      "roi": [
+        183,
+        842,
+        6,
+        24
+      ],
+      "threshold_type": "white",
+      "minimum_pixels": 15,
+      "first_visible_frame": 130,
+      "expected_frame": 130,
+      "passed": true
+    },
+    "ac_label": {
+      "roi": [
+        653,
+        896,
+        70,
+        45
+      ],
+      "threshold_type": "cyan",
+      "minimum_pixels": 40,
+      "first_visible_frame": 158,
+      "expected_frame": 158,
+      "passed": true
+    },
+    "box": {
+      "roi": [
+        280,
+        1036,
+        130,
+        8
+      ],
+      "threshold_type": "white",
+      "minimum_pixels": 20,
+      "first_visible_frame": 310,
+      "expected_frame": 310,
+      "passed": true
+    },
+    "inverter_label": {
+      "roi": [
+        80,
+        1492,
+        360,
+        25
+      ],
+      "threshold_type": "white",
+      "minimum_pixels": 100,
+      "first_visible_frame": 380,
+      "expected_frame": 380,
+      "passed": true
+    }
+  },
+  "v2": {
+    "panels": {
+      "roi": [
+        310,
+        659,
+        30,
+        8
+      ],
+      "threshold_type": "white",
+      "minimum_pixels": 8,
+      "first_visible_frame": 10,
+      "expected_frame": 10,
+      "passed": true
+    },
+    "dc_label": {
+      "roi": [
+        288,
+        930,
+        70,
+        45
+      ],
+      "threshold_type": "amber",
+      "minimum_pixels": 40,
+      "first_visible_frame": 35,
+      "expected_frame": 35,
+      "passed": true
+    },
+    "house": {
+      "roi": [
+        183,
+        842,
+        6,
+        24
+      ],
+      "threshold_type": "white",
+      "minimum_pixels": 15,
+      "first_visible_frame": 130,
+      "expected_frame": 130,
+      "passed": true
+    },
+    "ac_label": {
+      "roi": [
+        653,
+        896,
+        70,
+        45
+      ],
+      "threshold_type": "cyan",
+      "minimum_pixels": 40,
+      "first_visible_frame": 158,
+      "expected_frame": 158,
+      "passed": true
+    },
+    "box": {
+      "roi": [
+        280,
+        1036,
+        130,
+        8
+      ],
+      "threshold_type": "white",
+      "minimum_pixels": 20,
+      "first_visible_frame": 325,
+      "expected_frame": 325,
+      "passed": true
+    },
+    "inverter_label": {
+      "roi": [
+        80,
+        1492,
+        360,
+        25
+      ],
+      "threshold_type": "white",
+      "minimum_pixels": 100,
+      "first_visible_frame": 380,
+      "expected_frame": 380,
+      "passed": true
+    }
+  },
+  "limitations": "Pixel thresholds detect onset of chosen visible contours/labels, not a human perceptual judgement of materialization."
+}

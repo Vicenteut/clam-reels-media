@@ -1,0 +1,11 @@
+{
+  "record_closed_utc": "2026-11-07T23:34:23.047309+00:00",
+  "agent_start_utc_approximate": "2026-11-07T23:16:00+00:00",
+  "elapsed_minutes_approximate": 18.384121816666667,
+  "e5_started_utc": "2026-11-07T23:29:22.913285+00:00",
+  "e5_render_finished_utc_computed": "2026-11-07T23:29:50.010068+00:00",
+  "e5_config_preview_render_seconds": 27.096783,
+  "renders_total_seconds": 102.80949058296392,
+  "human_seconds_after_handoff": 0,
+  "incremental_cost": 0
+}

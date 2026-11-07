@@ -1,0 +1,134 @@
+{
+  "version": "v2",
+  "started_utc": "2026-11-07T23:29:24.662899+00:00",
+  "render_seconds": 25.347168957989197,
+  "frames": 413,
+  "video_duration": 13.766666666666667,
+  "audio_sha256": "c87ccdfc1c6b976588ead0928a4e84baee872d78babcbffcb602c01bccb2ec55",
+  "mp4_sha256": "5e19c710f21d891284d87330dc34ce12e34ef84475a94242587973fdf40be15a",
+  "config": {
+    "version": "v2",
+    "cable_route": "wall",
+    "box_delay_frames": 15,
+    "inverter_label": "INVERTER \u00b7 DC \u2192 AC"
+  },
+  "source_sha256": "4de9690f0fd66d9d647f0e3d75b3574afb21db72156f9c2f42387a88a81b0ea9",
+  "command": [
+    "ffmpeg",
+    "-hide_banner",
+    "-loglevel",
+    "warning",
+    "-y",
+    "-f",
+    "rawvideo",
+    "-pix_fmt",
+    "rgb24",
+    "-s",
+    "1080x1920",
+    "-r",
+    "30",
+    "-i",
+    "-",
+    "-i",
+    "/Users/ashleyarriaga/Documents/Codex/2026-11-07/handoff-prueba-de-motores-texto-para/work/repo/handoffs/prueba-motores/runs/2026-11-07_codex_gpt-6_python-pillow/materiales/entradas/voz.wav",
+    "-map",
+    "0:v:0",
+    "-map",
+    "1:a:0",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "medium",
+    "-crf",
+    "17",
+    "-pix_fmt",
+    "yuv420p",
+    "-c:a",
+    "aac",
+    "-b:a",
+    "192k",
+    "-ar",
+    "48000",
+    "-ac",
+    "1",
+    "-movflags",
+    "+faststart",
+    "-metadata",
+    "title=Solar power \u2014 conversion",
+    "/Users/ashleyarriaga/Documents/Codex/2026-11-07/handoff-prueba-de-motores-texto-para/work/repo/handoffs/prueba-motores/runs/2026-11-07_codex_gpt-6_python-pillow/final_v2.mp4"
+  ],
+  "anchors": [
+    {
+      "event": "panels",
+      "word": "panels",
+      "word_seconds": 0.309,
+      "frame": 10,
+      "time": 0.3333333333333333,
+      "delta_ms": 24.333
+    },
+    {
+      "event": "dc",
+      "word": "direct",
+      "word_seconds": 1.135,
+      "frame": 35,
+      "time": 1.1666666666666667,
+      "delta_ms": 31.667
+    },
+    {
+      "event": "one_way",
+      "word": "one",
+      "word_seconds": 3.004,
+      "frame": 91,
+      "time": 3.033333333333333,
+      "delta_ms": 29.333
+    },
+    {
+      "event": "house",
+      "word": "house",
+      "word_seconds": 4.309,
+      "frame": 130,
+      "time": 4.333333333333333,
+      "delta_ms": 24.333
+    },
+    {
+      "event": "ac",
+      "word": "alternating",
+      "word_seconds": 5.265,
+      "frame": 158,
+      "time": 5.266666666666667,
+      "delta_ms": 1.667
+    },
+    {
+      "event": "back_forth",
+      "word": "back",
+      "word_seconds": 7.091,
+      "frame": 213,
+      "time": 7.1,
+      "delta_ms": 9.0
+    },
+    {
+      "event": "box",
+      "word": "box",
+      "word_seconds": 10.309,
+      "frame": 325,
+      "time": 10.833333333333334,
+      "delta_ms": 524.333
+    },
+    {
+      "event": "connect",
+      "word": "flips",
+      "word_seconds": 10.743,
+      "frame": 338,
+      "time": 11.266666666666667,
+      "delta_ms": 523.667
+    },
+    {
+      "event": "materialize",
+      "word": "inverter.",
+      "word_seconds": 12.657,
+      "frame": 380,
+      "time": 12.666666666666666,
+      "delta_ms": 9.667
+    }
+  ]
+}

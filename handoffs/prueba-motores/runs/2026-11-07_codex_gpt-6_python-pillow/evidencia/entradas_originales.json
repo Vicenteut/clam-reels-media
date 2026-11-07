@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-11-07T23:31:37.347139+00:00",
+  "repository": "https://github.com/Vicenteut/clam-reels-media",
+  "repository_commit": "8397de1015df8adbdba37788241b9c6e4894de86",
+  "reference_source": "git HEAD at recording time",
+  "files": {
+    "voz.wav": {
+      "sha256": "c87ccdfc1c6b976588ead0928a4e84baee872d78babcbffcb602c01bccb2ec55",
+      "source_path": "handoffs/prueba-motores/kit/voz.wav",
+      "distributed_path": "materiales/entradas/voz.wav",
+      "bytes": 1320078,
+      "verified_against_git": true
+    },
+    "tiempos.json": {
+      "sha256": "fa0a6d9854891b81c4fa951f0f5c12a5a23a5540e192da517ac43290044f0ab5",
+      "source_path": "handoffs/prueba-motores/kit/tiempos.json",
+      "distributed_path": "materiales/entradas/tiempos.json",
+      "bytes": 2668,
+      "verified_against_git": true
+    },
+    "guion.txt": {
+      "sha256": "82ce2510994c1b03da7744f83779a6e29bf00103cdfa9f8de710c05e7d5ff4cc",
+      "source_path": "handoffs/prueba-motores/kit/guion.txt",
+      "distributed_path": "materiales/entradas/guion.txt",
+      "bytes": 211,
+      "verified_against_git": true
+    }
+  }
+}

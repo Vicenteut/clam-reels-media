@@ -1,0 +1,1232 @@
+{
+  "schema_version": 1,
+  "validated_at_utc": "2026-11-07T23:31:37.449576+00:00",
+  "run": "2026-11-07_codex_gpt-6_python-pillow",
+  "input_directory": "/Users/ashleyarriaga/Documents/Codex/2026-11-07/handoff-prueba-de-motores-texto-para/work/repo/handoffs/prueba-motores/runs/2026-11-07_codex_gpt-6_python-pillow/materiales/entradas",
+  "limitations": [
+    "Run only after rendering finishes; file stability is also checked during inspection.",
+    "AAC content is assessed numerically with declared tolerances, not claimed lossless.",
+    "Anchor manifests/configuration do not replace frame-by-frame visual validation.",
+    "Legibility, visual quality and human comprehension remain evaluator tasks."
+  ],
+  "numpy_version": "1.26.4",
+  "kit_sha256": {
+    "voz.wav": "c87ccdfc1c6b976588ead0928a4e84baee872d78babcbffcb602c01bccb2ec55",
+    "tiempos.json": "fa0a6d9854891b81c4fa951f0f5c12a5a23a5540e192da517ac43290044f0ab5",
+    "guion.txt": "82ce2510994c1b03da7744f83779a6e29bf00103cdfa9f8de710c05e7d5ff4cc"
+  },
+  "source_audio_ffprobe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "pcm_s16le",
+        "codec_long_name": "PCM signed 16-bit little-endian",
+        "codec_type": "audio",
+        "codec_tag_string": "[1][0][0][0]",
+        "codec_tag": "0x0001",
+        "sample_fmt": "s16",
+        "sample_rate": "48000",
+        "channels": 1,
+        "bits_per_sample": 16,
+        "initial_padding": 0,
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "duration_ts": 660000,
+        "duration": "13.750000",
+        "bit_rate": "768000",
+        "disposition": {
+          "default": 0,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        }
+      }
+    ],
+    "format": {
+      "filename": "/Users/ashleyarriaga/Documents/Codex/2026-11-07/handoff-prueba-de-motores-texto-para/work/repo/handoffs/prueba-motores/runs/2026-11-07_codex_gpt-6_python-pillow/materiales/entradas/voz.wav",
+      "nb_streams": 1,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "wav",
+      "format_long_name": "WAV / WAVE (Waveform Audio)",
+      "duration": "13.750000",
+      "size": "1320078",
+      "bit_rate": "768045",
+      "probe_score": 99,
+      "tags": {
+        "encoder": "Lavf63.1.102"
+      }
+    }
+  },
+  "media": {
+    "v1": {
+      "path": "final_v1.mp4",
+      "sha256": "689e662c42883fdd69069aaa4fc4d6df4c2a4cc9cd56ca81f68f1cd84e8abe05",
+      "ffprobe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.640028",
+            "width": 1080,
+            "height": 1920,
+            "coded_width": 1088,
+            "coded_height": 1920,
+            "has_b_frames": 2,
+            "pix_fmt": "yuv420p",
+            "level": 40,
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "refs": 4,
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 211456,
+            "duration": "13.766667",
+            "bit_rate": "467791",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "413",
+            "nb_read_frames": "413",
+            "extradata_size": 47,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "VideoHandler",
+              "encoder": "Lavc63.1.102 libx264"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "mime_codec_string": "mp4a.40.2",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bits_per_sample": 0,
+            "initial_padding": 1024,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 660000,
+            "duration": "13.750000",
+            "bit_rate": "205768",
+            "nb_frames": "646",
+            "nb_read_frames": "645",
+            "extradata_size": 5,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "SoundHandler"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/ashleyarriaga/Documents/Codex/2026-11-07/handoff-prueba-de-motores-texto-para/work/repo/handoffs/prueba-motores/runs/2026-11-07_codex_gpt-6_python-pillow/final_v1.mp4",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "13.766667",
+          "size": "1175651",
+          "bit_rate": "683187",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "title": "Solar power — conversion",
+            "encoder": "Lavf63.1.102"
+          }
+        }
+      },
+      "audio": {
+        "samples_compared": 660000,
+        "zero_lag_pearson": 0.999985886,
+        "estimated_linear_gain": 0.999361133,
+        "rms_difference_db": -0.005428,
+        "best_lag_samples": 0,
+        "best_lag_seconds": 0.0,
+        "snr_db": 45.436334,
+        "reference_samples": 660000,
+        "decoded_samples": 660000,
+        "extra_decoded_samples": 0,
+        "aac_padding_note": "AAC decoding can expose trailing codec-frame padding. Compare the complete source duration; ffprobe separately verifies the container's intended duration.",
+        "segments": [
+          {
+            "samples_compared": 96000,
+            "zero_lag_pearson": 0.999986684,
+            "estimated_linear_gain": 0.999586577,
+            "rms_difference_db": -0.003476,
+            "best_lag_samples": 0,
+            "best_lag_seconds": 0.0,
+            "snr_db": 45.721575,
+            "start_seconds": 0.0,
+            "end_seconds": 2.0
+          },
+          {
+            "samples_compared": 96000,
+            "zero_lag_pearson": 0.999986305,
+            "estimated_linear_gain": 0.999403728,
+            "rms_difference_db": -0.005062,
+            "best_lag_samples": 0,
+            "best_lag_seconds": 0.0,
+            "snr_db": 45.573147,
+            "start_seconds": 3.0,
+            "end_seconds": 5.0
+          },
+          {
+            "samples_compared": 96000,
+            "zero_lag_pearson": 0.999984283,
+            "estimated_linear_gain": 0.99906745,
+            "rms_difference_db": -0.007967,
+            "best_lag_samples": 0,
+            "best_lag_seconds": 0.0,
+            "snr_db": 44.91535,
+            "start_seconds": 6.0,
+            "end_seconds": 8.0
+          },
+          {
+            "samples_compared": 96000,
+            "zero_lag_pearson": 0.999991884,
+            "estimated_linear_gain": 0.999507767,
+            "rms_difference_db": -0.004206,
+            "best_lag_samples": 0,
+            "best_lag_seconds": 0.0,
+            "snr_db": 47.835855,
+            "start_seconds": 9.0,
+            "end_seconds": 11.0
+          },
+          {
+            "samples_compared": 96000,
+            "zero_lag_pearson": 0.99999575,
+            "estimated_linear_gain": 0.999530799,
+            "rms_difference_db": -0.004039,
+            "best_lag_samples": 0,
+            "best_lag_seconds": 0.0,
+            "snr_db": 50.599082,
+            "start_seconds": 11.75,
+            "end_seconds": 13.75
+          }
+        ],
+        "interpretation": "High correlation, unit gain and zero local lag support unchanged timing and level within the thresholds below; AAC is lossy, so binary equality is not expected."
+      }
+    },
+    "v2": {
+      "path": "final_v2.mp4",
+      "sha256": "5e19c710f21d891284d87330dc34ce12e34ef84475a94242587973fdf40be15a",
+      "ffprobe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.640028",
+            "width": 1080,
+            "height": 1920,
+            "coded_width": 1088,
+            "coded_height": 1920,
+            "has_b_frames": 2,
+            "pix_fmt": "yuv420p",
+            "level": 40,
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "refs": 4,
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 211456,
+            "duration": "13.766667",
+            "bit_rate": "442786",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "413",
+            "nb_read_frames": "413",
+            "extradata_size": 47,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "VideoHandler",
+              "encoder": "Lavc63.1.102 libx264"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "mime_codec_string": "mp4a.40.2",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bits_per_sample": 0,
+            "initial_padding": 1024,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 660000,
+            "duration": "13.750000",
+            "bit_rate": "205768",
+            "nb_frames": "646",
+            "nb_read_frames": "645",
+            "extradata_size": 5,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "SoundHandler"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/ashleyarriaga/Documents/Codex/2026-11-07/handoff-prueba-de-motores-texto-para/work/repo/handoffs/prueba-motores/runs/2026-11-07_codex_gpt-6_python-pillow/final_v2.mp4",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "13.766667",
+          "size": "1132348",
+          "bit_rate": "658023",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "title": "Solar power — conversion",
+            "encoder": "Lavf63.1.102"
+          }
+        }
+      },
+      "audio": {
+        "samples_compared": 660000,
+        "zero_lag_pearson": 0.999985886,
+        "estimated_linear_gain": 0.999361133,
+        "rms_difference_db": -0.005428,
+        "best_lag_samples": 0,
+        "best_lag_seconds": 0.0,
+        "snr_db": 45.436334,
+        "reference_samples": 660000,
+        "decoded_samples": 660000,
+        "extra_decoded_samples": 0,
+        "aac_padding_note": "AAC decoding can expose trailing codec-frame padding. Compare the complete source duration; ffprobe separately verifies the container's intended duration.",
+        "segments": [
+          {
+            "samples_compared": 96000,
+            "zero_lag_pearson": 0.999986684,
+            "estimated_linear_gain": 0.999586577,
+            "rms_difference_db": -0.003476,
+            "best_lag_samples": 0,
+            "best_lag_seconds": 0.0,
+            "snr_db": 45.721575,
+            "start_seconds": 0.0,
+            "end_seconds": 2.0
+          },
+          {
+            "samples_compared": 96000,
+            "zero_lag_pearson": 0.999986305,
+            "estimated_linear_gain": 0.999403728,
+            "rms_difference_db": -0.005062,
+            "best_lag_samples": 0,
+            "best_lag_seconds": 0.0,
+            "snr_db": 45.573147,
+            "start_seconds": 3.0,
+            "end_seconds": 5.0
+          },
+          {
+            "samples_compared": 96000,
+            "zero_lag_pearson": 0.999984283,
+            "estimated_linear_gain": 0.99906745,
+            "rms_difference_db": -0.007967,
+            "best_lag_samples": 0,
+            "best_lag_seconds": 0.0,
+            "snr_db": 44.91535,
+            "start_seconds": 6.0,
+            "end_seconds": 8.0
+          },
+          {
+            "samples_compared": 96000,
+            "zero_lag_pearson": 0.999991884,
+            "estimated_linear_gain": 0.999507767,
+            "rms_difference_db": -0.004206,
+            "best_lag_samples": 0,
+            "best_lag_seconds": 0.0,
+            "snr_db": 47.835855,
+            "start_seconds": 9.0,
+            "end_seconds": 11.0
+          },
+          {
+            "samples_compared": 96000,
+            "zero_lag_pearson": 0.99999575,
+            "estimated_linear_gain": 0.999530799,
+            "rms_difference_db": -0.004039,
+            "best_lag_samples": 0,
+            "best_lag_seconds": 0.0,
+            "snr_db": 50.599082,
+            "start_seconds": 11.75,
+            "end_seconds": 13.75
+          }
+        ],
+        "interpretation": "High correlation, unit gain and zero local lag support unchanged timing and level within the thresholds below; AAC is lossy, so binary equality is not expected."
+      }
+    }
+  },
+  "provenance": {
+    "current_source_sha256": "4de9690f0fd66d9d647f0e3d75b3574afb21db72156f9c2f42387a88a81b0ea9",
+    "configs": {
+      "v1": {
+        "version": "v1",
+        "cable_route": "direct",
+        "box_delay_frames": 0,
+        "inverter_label": "INVERTER"
+      },
+      "v2": {
+        "version": "v2",
+        "cable_route": "wall",
+        "box_delay_frames": 15,
+        "inverter_label": "INVERTER · DC → AC"
+      }
+    },
+    "manifests": {
+      "v1": {
+        "version": "v1",
+        "started_utc": "2026-11-07T23:26:26.128064+00:00",
+        "render_seconds": 25.885919084015768,
+        "frames": 413,
+        "video_duration": 13.766666666666667,
+        "audio_sha256": "c87ccdfc1c6b976588ead0928a4e84baee872d78babcbffcb602c01bccb2ec55",
+        "mp4_sha256": "689e662c42883fdd69069aaa4fc4d6df4c2a4cc9cd56ca81f68f1cd84e8abe05",
+        "config": {
+          "version": "v1",
+          "cable_route": "direct",
+          "box_delay_frames": 0,
+          "inverter_label": "INVERTER"
+        },
+        "source_sha256": "4de9690f0fd66d9d647f0e3d75b3574afb21db72156f9c2f42387a88a81b0ea9",
+        "command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "warning",
+          "-y",
+          "-f",
+          "rawvideo",
+          "-pix_fmt",
+          "rgb24",
+          "-s",
+          "1080x1920",
+          "-r",
+          "30",
+          "-i",
+          "-",
+          "-i",
+          "/Users/ashleyarriaga/Documents/Codex/2026-11-07/handoff-prueba-de-motores-texto-para/work/repo/handoffs/prueba-motores/runs/2026-11-07_codex_gpt-6_python-pillow/materiales/entradas/voz.wav",
+          "-map",
+          "0:v:0",
+          "-map",
+          "1:a:0",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "17",
+          "-pix_fmt",
+          "yuv420p",
+          "-c:a",
+          "aac",
+          "-b:a",
+          "192k",
+          "-ar",
+          "48000",
+          "-ac",
+          "1",
+          "-movflags",
+          "+faststart",
+          "-metadata",
+          "title=Solar power — conversion",
+          "/Users/ashleyarriaga/Documents/Codex/2026-11-07/handoff-prueba-de-motores-texto-para/work/repo/handoffs/prueba-motores/runs/2026-11-07_codex_gpt-6_python-pillow/final_v1.mp4"
+        ],
+        "anchors": [
+          {
+            "event": "panels",
+            "word": "panels",
+            "word_seconds": 0.309,
+            "frame": 10,
+            "time": 0.3333333333333333,
+            "delta_ms": 24.333
+          },
+          {
+            "event": "dc",
+            "word": "direct",
+            "word_seconds": 1.135,
+            "frame": 35,
+            "time": 1.1666666666666667,
+            "delta_ms": 31.667
+          },
+          {
+            "event": "one_way",
+            "word": "one",
+            "word_seconds": 3.004,
+            "frame": 91,
+            "time": 3.033333333333333,
+            "delta_ms": 29.333
+          },
+          {
+            "event": "house",
+            "word": "house",
+            "word_seconds": 4.309,
+            "frame": 130,
+            "time": 4.333333333333333,
+            "delta_ms": 24.333
+          },
+          {
+            "event": "ac",
+            "word": "alternating",
+            "word_seconds": 5.265,
+            "frame": 158,
+            "time": 5.266666666666667,
+            "delta_ms": 1.667
+          },
+          {
+            "event": "back_forth",
+            "word": "back",
+            "word_seconds": 7.091,
+            "frame": 213,
+            "time": 7.1,
+            "delta_ms": 9.0
+          },
+          {
+            "event": "box",
+            "word": "box",
+            "word_seconds": 10.309,
+            "frame": 310,
+            "time": 10.333333333333334,
+            "delta_ms": 24.333
+          },
+          {
+            "event": "connect",
+            "word": "flips",
+            "word_seconds": 10.743,
+            "frame": 323,
+            "time": 10.766666666666667,
+            "delta_ms": 23.667
+          },
+          {
+            "event": "materialize",
+            "word": "inverter.",
+            "word_seconds": 12.657,
+            "frame": 380,
+            "time": 12.666666666666666,
+            "delta_ms": 9.667
+          }
+        ]
+      },
+      "v2": {
+        "version": "v2",
+        "started_utc": "2026-11-07T23:29:24.662899+00:00",
+        "render_seconds": 25.347168957989197,
+        "frames": 413,
+        "video_duration": 13.766666666666667,
+        "audio_sha256": "c87ccdfc1c6b976588ead0928a4e84baee872d78babcbffcb602c01bccb2ec55",
+        "mp4_sha256": "5e19c710f21d891284d87330dc34ce12e34ef84475a94242587973fdf40be15a",
+        "config": {
+          "version": "v2",
+          "cable_route": "wall",
+          "box_delay_frames": 15,
+          "inverter_label": "INVERTER · DC → AC"
+        },
+        "source_sha256": "4de9690f0fd66d9d647f0e3d75b3574afb21db72156f9c2f42387a88a81b0ea9",
+        "command": [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "warning",
+          "-y",
+          "-f",
+          "rawvideo",
+          "-pix_fmt",
+          "rgb24",
+          "-s",
+          "1080x1920",
+          "-r",
+          "30",
+          "-i",
+          "-",
+          "-i",
+          "/Users/ashleyarriaga/Documents/Codex/2026-11-07/handoff-prueba-de-motores-texto-para/work/repo/handoffs/prueba-motores/runs/2026-11-07_codex_gpt-6_python-pillow/materiales/entradas/voz.wav",
+          "-map",
+          "0:v:0",
+          "-map",
+          "1:a:0",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "17",
+          "-pix_fmt",
+          "yuv420p",
+          "-c:a",
+          "aac",
+          "-b:a",
+          "192k",
+          "-ar",
+          "48000",
+          "-ac",
+          "1",
+          "-movflags",
+          "+faststart",
+          "-metadata",
+          "title=Solar power — conversion",
+          "/Users/ashleyarriaga/Documents/Codex/2026-11-07/handoff-prueba-de-motores-texto-para/work/repo/handoffs/prueba-motores/runs/2026-11-07_codex_gpt-6_python-pillow/final_v2.mp4"
+        ],
+        "anchors": [
+          {
+            "event": "panels",
+            "word": "panels",
+            "word_seconds": 0.309,
+            "frame": 10,
+            "time": 0.3333333333333333,
+            "delta_ms": 24.333
+          },
+          {
+            "event": "dc",
+            "word": "direct",
+            "word_seconds": 1.135,
+            "frame": 35,
+            "time": 1.1666666666666667,
+            "delta_ms": 31.667
+          },
+          {
+            "event": "one_way",
+            "word": "one",
+            "word_seconds": 3.004,
+            "frame": 91,
+            "time": 3.033333333333333,
+            "delta_ms": 29.333
+          },
+          {
+            "event": "house",
+            "word": "house",
+            "word_seconds": 4.309,
+            "frame": 130,
+            "time": 4.333333333333333,
+            "delta_ms": 24.333
+          },
+          {
+            "event": "ac",
+            "word": "alternating",
+            "word_seconds": 5.265,
+            "frame": 158,
+            "time": 5.266666666666667,
+            "delta_ms": 1.667
+          },
+          {
+            "event": "back_forth",
+            "word": "back",
+            "word_seconds": 7.091,
+            "frame": 213,
+            "time": 7.1,
+            "delta_ms": 9.0
+          },
+          {
+            "event": "box",
+            "word": "box",
+            "word_seconds": 10.309,
+            "frame": 325,
+            "time": 10.833333333333334,
+            "delta_ms": 524.333
+          },
+          {
+            "event": "connect",
+            "word": "flips",
+            "word_seconds": 10.743,
+            "frame": 338,
+            "time": 11.266666666666667,
+            "delta_ms": 523.667
+          },
+          {
+            "event": "materialize",
+            "word": "inverter.",
+            "word_seconds": 12.657,
+            "frame": 380,
+            "time": 12.666666666666666,
+            "delta_ms": 9.667
+          }
+        ]
+      }
+    },
+    "frozen_v1": {
+      "frozen_utc": "2026-11-07T23:29:07.596387+00:00",
+      "mp4_sha256": "689e662c42883fdd69069aaa4fc4d6df4c2a4cc9cd56ca81f68f1cd84e8abe05",
+      "source_sha256": "4de9690f0fd66d9d647f0e3d75b3574afb21db72156f9c2f42387a88a81b0ea9",
+      "note": "V1 terminada y copiada al directorio de entrega antes de crear config_v2.json."
+    }
+  },
+  "checks": [
+    {
+      "check": "dependency:ffmpeg",
+      "status": "pass",
+      "executable": "/opt/homebrew/bin/ffmpeg"
+    },
+    {
+      "check": "dependency:ffprobe",
+      "status": "pass",
+      "executable": "/opt/homebrew/bin/ffprobe"
+    },
+    {
+      "check": "kit/voz.wav:unchanged",
+      "status": "pass",
+      "sha256": "c87ccdfc1c6b976588ead0928a4e84baee872d78babcbffcb602c01bccb2ec55",
+      "baseline_sha256": "c87ccdfc1c6b976588ead0928a4e84baee872d78babcbffcb602c01bccb2ec55",
+      "reference_source": "git",
+      "repository_commit": "8397de1015df8adbdba37788241b9c6e4894de86",
+      "used_path": "materiales/entradas/voz.wav"
+    },
+    {
+      "check": "kit/voz.wav:distributed_reference_matches_git",
+      "status": "pass",
+      "manifest_sha256": "c87ccdfc1c6b976588ead0928a4e84baee872d78babcbffcb602c01bccb2ec55",
+      "git_sha256": "c87ccdfc1c6b976588ead0928a4e84baee872d78babcbffcb602c01bccb2ec55"
+    },
+    {
+      "check": "kit/tiempos.json:unchanged",
+      "status": "pass",
+      "sha256": "fa0a6d9854891b81c4fa951f0f5c12a5a23a5540e192da517ac43290044f0ab5",
+      "baseline_sha256": "fa0a6d9854891b81c4fa951f0f5c12a5a23a5540e192da517ac43290044f0ab5",
+      "reference_source": "git",
+      "repository_commit": "8397de1015df8adbdba37788241b9c6e4894de86",
+      "used_path": "materiales/entradas/tiempos.json"
+    },
+    {
+      "check": "kit/tiempos.json:distributed_reference_matches_git",
+      "status": "pass",
+      "manifest_sha256": "fa0a6d9854891b81c4fa951f0f5c12a5a23a5540e192da517ac43290044f0ab5",
+      "git_sha256": "fa0a6d9854891b81c4fa951f0f5c12a5a23a5540e192da517ac43290044f0ab5"
+    },
+    {
+      "check": "kit/guion.txt:unchanged",
+      "status": "pass",
+      "sha256": "82ce2510994c1b03da7744f83779a6e29bf00103cdfa9f8de710c05e7d5ff4cc",
+      "baseline_sha256": "82ce2510994c1b03da7744f83779a6e29bf00103cdfa9f8de710c05e7d5ff4cc",
+      "reference_source": "git",
+      "repository_commit": "8397de1015df8adbdba37788241b9c6e4894de86",
+      "used_path": "materiales/entradas/guion.txt"
+    },
+    {
+      "check": "kit/guion.txt:distributed_reference_matches_git",
+      "status": "pass",
+      "manifest_sha256": "82ce2510994c1b03da7744f83779a6e29bf00103cdfa9f8de710c05e7d5ff4cc",
+      "git_sha256": "82ce2510994c1b03da7744f83779a6e29bf00103cdfa9f8de710c05e7d5ff4cc"
+    },
+    {
+      "check": "kit:source_audio_samples",
+      "status": "pass",
+      "actual_samples": 660000,
+      "expected_samples": 660000
+    },
+    {
+      "check": "v1:stream_count",
+      "status": "pass",
+      "video_streams": 1,
+      "audio_streams": 1
+    },
+    {
+      "check": "v1:resolution",
+      "status": "pass",
+      "actual": [
+        1080,
+        1920
+      ],
+      "expected": [
+        1080,
+        1920
+      ]
+    },
+    {
+      "check": "v1:video_codec",
+      "status": "pass",
+      "actual": "h264"
+    },
+    {
+      "check": "v1:pixel_format",
+      "status": "pass",
+      "actual": "yuv420p"
+    },
+    {
+      "check": "v1:audio_codec",
+      "status": "pass",
+      "actual": "aac"
+    },
+    {
+      "check": "v1:fps",
+      "status": "pass",
+      "average": "30/1",
+      "nominal": "30/1"
+    },
+    {
+      "check": "v1:decoded_frame_count",
+      "status": "pass",
+      "decoded": 413,
+      "declared": 413,
+      "expected": 413
+    },
+    {
+      "check": "v1:container_duration",
+      "status": "pass",
+      "actual_seconds": 13.766667,
+      "target_seconds": 13.75,
+      "tolerance_seconds": 0.03333333333333333
+    },
+    {
+      "check": "v1:video_duration",
+      "status": "pass",
+      "actual_seconds": 13.766667,
+      "target_seconds": 13.75,
+      "tolerance_seconds": 0.03333333333333333
+    },
+    {
+      "check": "v1:audio_duration",
+      "status": "pass",
+      "actual_seconds": 13.75,
+      "target_seconds": 13.75,
+      "tolerance_seconds": 2.0833333333333333e-05
+    },
+    {
+      "check": "v1:audio_format",
+      "status": "pass",
+      "sample_rate": "48000",
+      "channels": 1
+    },
+    {
+      "check": "v1:audio_start",
+      "status": "pass",
+      "actual_seconds": 0.0
+    },
+    {
+      "check": "v1:audio_complete",
+      "status": "pass",
+      "reference_samples": 660000,
+      "decoded_samples": 660000
+    },
+    {
+      "check": "v1:audio_correlation",
+      "status": "pass",
+      "actual": 0.999985886,
+      "minimum": 0.985
+    },
+    {
+      "check": "v1:audio_gain",
+      "status": "pass",
+      "estimated_linear_gain": 0.999361133,
+      "rms_difference_db": -0.005428,
+      "allowed_gain": [
+        0.98,
+        1.02
+      ],
+      "allowed_rms_db": [
+        -0.2,
+        0.2
+      ]
+    },
+    {
+      "check": "v1:audio_local_timing",
+      "status": "pass",
+      "best_lags_samples": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum_segment_correlation": 0.999984283,
+      "allowed_lag_samples": 1
+    },
+    {
+      "check": "v1:file_stable_during_validation",
+      "status": "pass",
+      "before": [
+        1175651,
+        1794094011997067875
+      ],
+      "after": [
+        1175651,
+        1794094011997067875
+      ]
+    },
+    {
+      "check": "v2:stream_count",
+      "status": "pass",
+      "video_streams": 1,
+      "audio_streams": 1
+    },
+    {
+      "check": "v2:resolution",
+      "status": "pass",
+      "actual": [
+        1080,
+        1920
+      ],
+      "expected": [
+        1080,
+        1920
+      ]
+    },
+    {
+      "check": "v2:video_codec",
+      "status": "pass",
+      "actual": "h264"
+    },
+    {
+      "check": "v2:pixel_format",
+      "status": "pass",
+      "actual": "yuv420p"
+    },
+    {
+      "check": "v2:audio_codec",
+      "status": "pass",
+      "actual": "aac"
+    },
+    {
+      "check": "v2:fps",
+      "status": "pass",
+      "average": "30/1",
+      "nominal": "30/1"
+    },
+    {
+      "check": "v2:decoded_frame_count",
+      "status": "pass",
+      "decoded": 413,
+      "declared": 413,
+      "expected": 413
+    },
+    {
+      "check": "v2:container_duration",
+      "status": "pass",
+      "actual_seconds": 13.766667,
+      "target_seconds": 13.75,
+      "tolerance_seconds": 0.03333333333333333
+    },
+    {
+      "check": "v2:video_duration",
+      "status": "pass",
+      "actual_seconds": 13.766667,
+      "target_seconds": 13.75,
+      "tolerance_seconds": 0.03333333333333333
+    },
+    {
+      "check": "v2:audio_duration",
+      "status": "pass",
+      "actual_seconds": 13.75,
+      "target_seconds": 13.75,
+      "tolerance_seconds": 2.0833333333333333e-05
+    },
+    {
+      "check": "v2:audio_format",
+      "status": "pass",
+      "sample_rate": "48000",
+      "channels": 1
+    },
+    {
+      "check": "v2:audio_start",
+      "status": "pass",
+      "actual_seconds": 0.0
+    },
+    {
+      "check": "v2:audio_complete",
+      "status": "pass",
+      "reference_samples": 660000,
+      "decoded_samples": 660000
+    },
+    {
+      "check": "v2:audio_correlation",
+      "status": "pass",
+      "actual": 0.999985886,
+      "minimum": 0.985
+    },
+    {
+      "check": "v2:audio_gain",
+      "status": "pass",
+      "estimated_linear_gain": 0.999361133,
+      "rms_difference_db": -0.005428,
+      "allowed_gain": [
+        0.98,
+        1.02
+      ],
+      "allowed_rms_db": [
+        -0.2,
+        0.2
+      ]
+    },
+    {
+      "check": "v2:audio_local_timing",
+      "status": "pass",
+      "best_lags_samples": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum_segment_correlation": 0.999984283,
+      "allowed_lag_samples": 1
+    },
+    {
+      "check": "v2:file_stable_during_validation",
+      "status": "pass",
+      "before": [
+        1132348,
+        1794094189994243237
+      ],
+      "after": [
+        1132348,
+        1794094189994243237
+      ]
+    },
+    {
+      "check": "v1:manifest_source_matches_current",
+      "status": "pass",
+      "manifest_sha256": "4de9690f0fd66d9d647f0e3d75b3574afb21db72156f9c2f42387a88a81b0ea9",
+      "current_sha256": "4de9690f0fd66d9d647f0e3d75b3574afb21db72156f9c2f42387a88a81b0ea9"
+    },
+    {
+      "check": "v1:manifest_audio_matches_kit",
+      "status": "pass",
+      "manifest_sha256": "c87ccdfc1c6b976588ead0928a4e84baee872d78babcbffcb602c01bccb2ec55",
+      "kit_sha256": "c87ccdfc1c6b976588ead0928a4e84baee872d78babcbffcb602c01bccb2ec55"
+    },
+    {
+      "check": "v1:manifest_mp4_matches_file",
+      "status": "pass",
+      "manifest_sha256": "689e662c42883fdd69069aaa4fc4d6df4c2a4cc9cd56ca81f68f1cd84e8abe05",
+      "actual_sha256": "689e662c42883fdd69069aaa4fc4d6df4c2a4cc9cd56ca81f68f1cd84e8abe05"
+    },
+    {
+      "check": "v1:manifest_config_matches_file",
+      "status": "pass"
+    },
+    {
+      "check": "v2:manifest_source_matches_current",
+      "status": "pass",
+      "manifest_sha256": "4de9690f0fd66d9d647f0e3d75b3574afb21db72156f9c2f42387a88a81b0ea9",
+      "current_sha256": "4de9690f0fd66d9d647f0e3d75b3574afb21db72156f9c2f42387a88a81b0ea9"
+    },
+    {
+      "check": "v2:manifest_audio_matches_kit",
+      "status": "pass",
+      "manifest_sha256": "c87ccdfc1c6b976588ead0928a4e84baee872d78babcbffcb602c01bccb2ec55",
+      "kit_sha256": "c87ccdfc1c6b976588ead0928a4e84baee872d78babcbffcb602c01bccb2ec55"
+    },
+    {
+      "check": "v2:manifest_mp4_matches_file",
+      "status": "pass",
+      "manifest_sha256": "5e19c710f21d891284d87330dc34ce12e34ef84475a94242587973fdf40be15a",
+      "actual_sha256": "5e19c710f21d891284d87330dc34ce12e34ef84475a94242587973fdf40be15a"
+    },
+    {
+      "check": "v2:manifest_config_matches_file",
+      "status": "pass"
+    },
+    {
+      "check": "e5:box_delay_exactly_15_frames",
+      "status": "pass",
+      "v1": 0,
+      "v2": 15,
+      "expected_difference": 15
+    },
+    {
+      "check": "e5:cable_route",
+      "status": "pass",
+      "v1": "direct",
+      "v2": "wall"
+    },
+    {
+      "check": "e5:inverter_label",
+      "status": "pass",
+      "v1": "INVERTER",
+      "v2": "INVERTER · DC → AC"
+    },
+    {
+      "check": "e5:same_render_source",
+      "status": "pass",
+      "v1": "4de9690f0fd66d9d647f0e3d75b3574afb21db72156f9c2f42387a88a81b0ea9",
+      "v2": "4de9690f0fd66d9d647f0e3d75b3574afb21db72156f9c2f42387a88a81b0ea9"
+    },
+    {
+      "check": "e5:declared_box_frame_delta",
+      "status": "pass",
+      "v1": 310,
+      "v2": 325,
+      "expected_difference": 15,
+      "note": "Manifest timing, not a visual event detector."
+    },
+    {
+      "check": "e5:declared_connect_frame_delta",
+      "status": "pass",
+      "v1": 323,
+      "v2": 338,
+      "expected_difference": 15,
+      "note": "Manifest timing, not a visual event detector."
+    },
+    {
+      "check": "e5:declared_materialize_frame_delta",
+      "status": "pass",
+      "v1": 380,
+      "v2": 380,
+      "expected_difference": 0,
+      "note": "Manifest timing, not a visual event detector."
+    },
+    {
+      "check": "v1:frozen_hash_unchanged",
+      "status": "pass",
+      "frozen_sha256": "689e662c42883fdd69069aaa4fc4d6df4c2a4cc9cd56ca81f68f1cd84e8abe05",
+      "actual_sha256": "689e662c42883fdd69069aaa4fc4d6df4c2a4cc9cd56ca81f68f1cd84e8abe05"
+    },
+    {
+      "check": "v1:frozen_source_matches_render",
+      "status": "pass",
+      "frozen_sha256": "4de9690f0fd66d9d647f0e3d75b3574afb21db72156f9c2f42387a88a81b0ea9",
+      "render_sha256": "4de9690f0fd66d9d647f0e3d75b3574afb21db72156f9c2f42387a88a81b0ea9"
+    }
+  ],
+  "counts": {
+    "pass": 60,
+    "fail": 0,
+    "pending": 0
+  },
+  "status": "pass"
+}
