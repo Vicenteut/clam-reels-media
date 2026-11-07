@@ -1,0 +1,1 @@
+But panels make direct current, which only flows one way, and your house runs on alternating current, which flips back and forth many times a second. So you add a box that flips it for you. That's the inverter.
