@@ -1,0 +1,6 @@
+Why does ChatGPT give a different answer when you ask the exact same question twice? Because it never looks up an answer. It writes one piece at a time.
+First, your message is cut into small pieces called tokens. Then the model scores every token it knows, over a hundred thousand of them, and gives each one a probability of coming next.
+After "The sky is", blue might get sixty percent, clear twenty, and falling almost zero.
+But it doesn't always pick the top one. It rolls weighted dice, so likely words usually win, and sometimes a less likely one sneaks in.
+The chosen token is added to the text, and the whole process repeats until the answer is done. So one different roll early on, and the two answers drift apart.
+Know someone who thinks ChatGPT copies answers from somewhere? Send them this.
