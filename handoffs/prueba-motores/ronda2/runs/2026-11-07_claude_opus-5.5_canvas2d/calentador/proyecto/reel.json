@@ -1,0 +1,38 @@
+{
+  "style": "classic",
+  "name": "canvas-calentador",
+  "presenter": {},
+  "captions": {
+    "emphasize": [
+      "box",
+      "showers",
+      "wire",
+      "pump",
+      "rule",
+      "rises",
+      "black",
+      "copper",
+      "glass",
+      "sunlight",
+      "heats",
+      "traps",
+      "car",
+      "warms",
+      "lighter",
+      "tank",
+      "above",
+      "heavier",
+      "sinks",
+      "loop",
+      "pump",
+      "thermosiphon",
+      "insulated",
+      "night",
+      "electric"
+    ]
+  },
+  "theme": {
+    "accent": "#FF3B1F"
+  },
+  "language": "en"
+}

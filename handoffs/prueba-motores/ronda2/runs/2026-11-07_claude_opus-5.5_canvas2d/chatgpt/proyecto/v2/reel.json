@@ -1,0 +1,43 @@
+{
+  "style": "classic",
+  "name": "canvas-chatgpt",
+  "presenter": {},
+  "captions": {
+    "emphasize": [
+      "ChatGPT",
+      "different",
+      "twice",
+      "never",
+      "piece",
+      "cut",
+      "tokens",
+      "model",
+      "every",
+      "hundred",
+      "thousand",
+      "probability",
+      "blue",
+      "sixty",
+      "clear",
+      "twenty",
+      "falling",
+      "zero",
+      "always",
+      "weighted",
+      "dice",
+      "win",
+      "sometimes",
+      "sneaks",
+      "added",
+      "repeats",
+      "done",
+      "roll",
+      "drift",
+      "copies"
+    ]
+  },
+  "theme": {
+    "accent": "#7A3CFF"
+  },
+  "language": "en"
+}
