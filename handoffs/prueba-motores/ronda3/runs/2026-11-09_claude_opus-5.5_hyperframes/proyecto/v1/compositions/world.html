@@ -1,0 +1,409 @@
+<template>
+<style>
+  #root { position:absolute; inset:0; overflow:hidden; --accent:#FF5A5F; }
+  #w-cam { position:absolute; left:0; top:0; width:1080px; height:1920px; transform-origin:0 0; }
+</style>
+<div id="root" data-composition-id="world" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+  <div id="w-cam" data-layout-allow-overflow data-layout-allow-overlap>
+<svg id="w-svg" width="1080" height="1920" viewBox="0 0 1080 1920" style="position:absolute;left:0;top:0;overflow:visible">
+  <defs>
+    <filter id="glow" x="-2" y="-2" width="5" height="5"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <radialGradient id="lampglow"><stop offset="0" stop-color="#FFE7A3" stop-opacity="0.85"/><stop offset="1" stop-color="#FFE7A3" stop-opacity="0"/></radialGradient>
+    <pattern id="hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="14" height="14" fill="#FFB02055"/><line x1="0" y1="0" x2="0" y2="14" stroke="#B87400" stroke-width="5"/></pattern>
+  </defs>
+  <rect id="w-sky" x="-2000" y="-2000" width="5080" height="3100" fill="#8FD0F7"/>
+  <g id="w-stars" opacity="0"><circle cx="-160" cy="120" r="2" fill="#FFFFFF"/><circle cx="-23" cy="209" r="3" fill="#FFFFFF"/><circle cx="114" cy="298" r="4" fill="#FFFFFF"/><circle cx="251" cy="387" r="2" fill="#FFFFFF"/><circle cx="388" cy="476" r="3" fill="#FFFFFF"/><circle cx="525" cy="145" r="4" fill="#FFFFFF"/><circle cx="662" cy="234" r="2" fill="#FFFFFF"/><circle cx="799" cy="323" r="3" fill="#FFFFFF"/><circle cx="936" cy="412" r="4" fill="#FFFFFF"/><circle cx="1073" cy="501" r="2" fill="#FFFFFF"/><circle cx="1210" cy="170" r="3" fill="#FFFFFF"/><circle cx="-53" cy="259" r="4" fill="#FFFFFF"/><circle cx="84" cy="348" r="2" fill="#FFFFFF"/><circle cx="221" cy="437" r="3" fill="#FFFFFF"/><circle cx="358" cy="526" r="4" fill="#FFFFFF"/><circle cx="495" cy="195" r="2" fill="#FFFFFF"/><circle cx="632" cy="284" r="3" fill="#FFFFFF"/><circle cx="769" cy="373" r="4" fill="#FFFFFF"/><circle cx="906" cy="462" r="2" fill="#FFFFFF"/><circle cx="1043" cy="131" r="3" fill="#FFFFFF"/><circle cx="1180" cy="220" r="4" fill="#FFFFFF"/><circle cx="-83" cy="309" r="2" fill="#FFFFFF"/><circle cx="54" cy="398" r="3" fill="#FFFFFF"/><circle cx="191" cy="487" r="4" fill="#FFFFFF"/><circle cx="328" cy="156" r="2" fill="#FFFFFF"/><circle cx="465" cy="245" r="3" fill="#FFFFFF"/><circle cx="602" cy="334" r="4" fill="#FFFFFF"/><circle cx="739" cy="423" r="2" fill="#FFFFFF"/><circle cx="876" cy="512" r="3" fill="#FFFFFF"/><circle cx="1013" cy="181" r="4" fill="#FFFFFF"/><circle cx="1150" cy="270" r="2" fill="#FFFFFF"/><circle cx="-113" cy="359" r="3" fill="#FFFFFF"/><circle cx="24" cy="448" r="4" fill="#FFFFFF"/><circle cx="161" cy="537" r="2" fill="#FFFFFF"/><circle cx="298" cy="206" r="3" fill="#FFFFFF"/><circle cx="435" cy="295" r="4" fill="#FFFFFF"/><circle cx="572" cy="384" r="2" fill="#FFFFFF"/><circle cx="709" cy="473" r="3" fill="#FFFFFF"/><circle cx="846" cy="142" r="4" fill="#FFFFFF"/><circle cx="983" cy="231" r="2" fill="#FFFFFF"/></g>
+  <g id="w-sun"><circle r="70" fill="#FFD84D" opacity="0.35"/><circle r="48" fill="#FFD23F" stroke="#F2A900" stroke-width="4"/></g>
+  <g id="w-moon" opacity="0" transform="translate(860,300)"><circle r="40" fill="#F4F1DE"/><circle cx="18" cy="-10" r="36" fill="#0D1B3D" class="moonbite"/></g>
+  <g id="w-rays" opacity="0" stroke="#FFD23F" stroke-width="6" stroke-linecap="round" stroke-dasharray="18 22">
+    <line x1="180" y1="330" x2="274" y2="555"/><line x1="180" y1="330" x2="413" y2="555"/><line x1="180" y1="330" x2="545" y2="555"/>
+  </g>
+  <!-- ground -->
+  <rect x="-2000" y="1100" width="5080" height="2000" fill="#3E7D4E"/>
+  <rect x="-2000" y="1100" width="5080" height="14" fill="#2F6440"/>
+  <!-- pole + worker -->
+  <g id="w-pole"><rect x="981" y="560" width="18" height="540" fill="#8A6A4A"/><rect x="930" y="584" width="120" height="12" fill="#8A6A4A"/>
+    <circle cx="940" cy="580" r="7" fill="#C9D2DC"/><circle cx="1040" cy="580" r="7" fill="#C9D2DC"/>
+    <line x1="1040" y1="586" x2="1600" y2="560" stroke="#2B2D42" stroke-width="4"/></g>
+  <g id="w-worker" opacity="0" transform="translate(1016,720)">
+    <rect x="-14" y="-20" width="28" height="44" rx="6" fill="#FF8C00"/><circle cy="-34" r="14" fill="#E0AC69"/>
+    <path d="M -17 -38 Q 0 -60 17 -38 Z" fill="#FFD23F" stroke="#B38600" stroke-width="2"/>
+    <line x1="-14" y1="-10" x2="-30" y2="-40" stroke="#FF8C00" stroke-width="8" stroke-linecap="round"/>
+    <rect x="-12" y="24" width="10" height="34" fill="#2B4C7E"/><rect x="2" y="24" width="10" height="34" fill="#2B4C7E"/>
+  </g>
+  <g id="w-shield" opacity="0" transform="translate(920,700)"><path d="M0,-34 L28,-24 L28,4 Q28,26 0,38 Q-28,26 -28,4 L-28,-24 Z" fill="#2ECC71" stroke="#14213D" stroke-width="3"/><path d="M-12,2 L-3,12 L14,-10" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <!-- grid service drop (drawn line), meter -->
+  <polyline id="w-drop" points="880.0,904.0 880.0,612.0 984.0,594.0" fill="none" stroke="#2B2D42" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="397.5" stroke-dashoffset="397.5" />
+  <g id="w-meter"><circle cx="880" cy="930" r="28" fill="#E9EEF3" stroke="#14213D" stroke-width="4"/><circle cx="880" cy="930" r="17" fill="#FFFFFF" stroke="#9AA8B6" stroke-width="2"/>
+    <line id="w-meter-needle" x1="880" y1="930" x2="880" y2="916" stroke="#FF5A5F" stroke-width="4" stroke-linecap="round" style="transform-origin:880px 930px" class="needle"/></g>
+  <g id="w-meter-arrows" opacity="0"><text x="880" y="890" text-anchor="middle" font-family="Inter" font-weight="900" font-size="34" fill="#14213D">⇄</text></g>
+  <!-- house body: cutaway room -->
+  <rect x="150" y="640" width="690" height="460" fill="#F6EBDD"/>
+  <rect id="w-roomdark" x="150" y="640" width="690" height="460" fill="#0A1230" opacity="0"/>
+  <rect x="150" y="640" width="690" height="460" fill="none" stroke="#14213D" stroke-width="8"/>
+  <rect x="150" y="1092" width="690" height="14" fill="#C9B79C"/>
+  <!-- roof face -->
+  <polygon points="230.0,470.0 760.0,470.0 860.0,640.0 130.0,640.0" fill="#C0533A" stroke="#14213D" stroke-width="6"/>
+  <g id="w-p-0" class="panel" opacity="0" style="transform-origin:293px 518px"><polygon points="254.8,483.6 358.5,483.6 338.5,551.6 219.6,551.6" fill="#1E4FA3" stroke="#0B1F45" stroke-width="3" class="pfill"/><line x1="289.3" y1="483.6" x2="259.2" y2="551.6" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><line x1="323.9" y1="483.6" x2="298.9" y2="551.6" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><line x1="237.2" y1="517.6" x2="348.5" y2="517.6" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><polygon class="pglint" points="254.8,483.6 358.5,483.6 338.5,551.6 219.6,551.6" fill="#FFFFFF" opacity="0"/></g>
+<g id="w-p-1" class="panel" opacity="0" style="transform-origin:262px 592px"><polygon points="216.0,558.4 336.5,558.4 316.5,626.4 180.8,626.4" fill="#1E4FA3" stroke="#0B1F45" stroke-width="3" class="pfill"/><line x1="256.2" y1="558.4" x2="226.1" y2="626.4" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><line x1="296.3" y1="558.4" x2="271.3" y2="626.4" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><line x1="198.4" y1="592.4" x2="326.5" y2="592.4" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><polygon class="pglint" points="216.0,558.4 336.5,558.4 316.5,626.4 180.8,626.4" fill="#FFFFFF" opacity="0"/></g>
+<g id="w-p-2" class="panel" opacity="0" style="transform-origin:416px 518px"><polygon points="369.4,483.6 473.2,483.6 470.0,551.6 351.0,551.6" fill="#1E4FA3" stroke="#0B1F45" stroke-width="3" class="pfill"/><line x1="404.0" y1="483.6" x2="390.7" y2="551.6" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><line x1="438.6" y1="483.6" x2="430.3" y2="551.6" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><line x1="360.2" y1="517.6" x2="471.6" y2="517.6" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><polygon class="pglint" points="369.4,483.6 473.2,483.6 470.0,551.6 351.0,551.6" fill="#FFFFFF" opacity="0"/></g>
+<g id="w-p-3" class="panel" opacity="0" style="transform-origin:404px 592px"><polygon points="349.2,558.4 469.6,558.4 466.4,626.4 330.8,626.4" fill="#1E4FA3" stroke="#0B1F45" stroke-width="3" class="pfill"/><line x1="389.3" y1="558.4" x2="376.0" y2="626.4" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><line x1="429.5" y1="558.4" x2="421.2" y2="626.4" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><line x1="340.0" y1="592.4" x2="468.0" y2="592.4" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><polygon class="pglint" points="349.2,558.4 469.6,558.4 466.4,626.4 330.8,626.4" fill="#FFFFFF" opacity="0"/></g>
+<g id="w-p-4" class="panel" opacity="0" style="transform-origin:539px 518px"><polygon points="484.1,483.6 587.8,483.6 601.4,551.6 482.5,551.6" fill="#1E4FA3" stroke="#0B1F45" stroke-width="3" class="pfill"/><line x1="518.7" y1="483.6" x2="522.1" y2="551.6" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><line x1="553.2" y1="483.6" x2="561.8" y2="551.6" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><line x1="483.3" y1="517.6" x2="594.6" y2="517.6" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><polygon class="pglint" points="484.1,483.6 587.8,483.6 601.4,551.6 482.5,551.6" fill="#FFFFFF" opacity="0"/></g>
+<g id="w-p-5" class="panel" opacity="0" style="transform-origin:546px 592px"><polygon points="482.3,558.4 602.8,558.4 616.4,626.4 480.7,626.4" fill="#1E4FA3" stroke="#0B1F45" stroke-width="3" class="pfill"/><line x1="522.5" y1="558.4" x2="525.9" y2="626.4" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><line x1="562.6" y1="558.4" x2="571.2" y2="626.4" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><line x1="481.5" y1="592.4" x2="609.6" y2="592.4" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><polygon class="pglint" points="482.3,558.4 602.8,558.4 616.4,626.4 480.7,626.4" fill="#FFFFFF" opacity="0"/></g>
+  <g id="w-pn-0" class="panel" opacity="0" style="transform-origin:668px 518px"><polygon points="604.2,483.6 707.9,483.6 739.1,551.6 620.2,551.6" fill="#1E4FA3" stroke="#0B1F45" stroke-width="3" class="pfill"/><line x1="638.8" y1="483.6" x2="659.8" y2="551.6" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><line x1="673.4" y1="483.6" x2="699.5" y2="551.6" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><line x1="612.2" y1="517.6" x2="723.5" y2="517.6" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><polygon class="pglint" points="604.2,483.6 707.9,483.6 739.1,551.6 620.2,551.6" fill="#FFFFFF" opacity="0"/></g>
+<g id="w-pn-1" class="panel" opacity="0" style="transform-origin:694px 592px"><polygon points="621.8,558.4 742.3,558.4 773.5,626.4 637.8,626.4" fill="#1E4FA3" stroke="#0B1F45" stroke-width="3" class="pfill"/><line x1="662.0" y1="558.4" x2="683.0" y2="626.4" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><line x1="702.1" y1="558.4" x2="728.2" y2="626.4" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><line x1="629.8" y1="592.4" x2="757.9" y2="592.4" stroke="#7FA8E8" stroke-width="1.5" opacity="0.7"/><polygon class="pglint" points="621.8,558.4 742.3,558.4 773.5,626.4 637.8,626.4" fill="#FFFFFF" opacity="0"/></g>
+  <polyline id="w-row" points="176.4,634.9 625.3,634.9" fill="none" stroke="#0B1F45" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="448.9" stroke-dashoffset="448.9" />
+  <polyline id="w-newrow" points="639.8,634.9 813.6,634.9" fill="none" stroke="#0B1F45" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="173.8" stroke-dashoffset="173.8" />
+  <rect id="w-junc" x="613" y="622" width="24" height="20" rx="4" fill="#2B2D42" opacity="0"/>
+  <!-- wires (drawn when named) -->
+  <polyline id="w-dc" points="624.6,631.5 624.6,662.0 705.0,662.0 705.0,700.0" fill="none" stroke="#2B2D42" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="148.9" stroke-dashoffset="148.9" />
+  <polyline id="w-invbrk" points="705.0,850.0 705.0,890.0" fill="none" stroke="#2B2D42" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="40.0" stroke-dashoffset="40.0" />
+  <polyline id="w-lamp" points="650.0,915.0 560.0,915.0 560.0,678.0 260.0,678.0" fill="none" stroke="#2B2D42" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="627.0" stroke-dashoffset="627.0" />
+  <polyline id="w-ac1" points="405.0,678.0 405.0,715.0" fill="none" stroke="#2B2D42" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="37.0" stroke-dashoffset="37.0" />
+  <polyline id="w-ac2" points="560.0,835.0 482.0,835.0" fill="none" stroke="#2B2D42" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="78.0" stroke-dashoffset="78.0" />
+  <polyline id="w-fridge" points="650.0,1010.0 292.0,1010.0" fill="none" stroke="#2B2D42" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="358.0" stroke-dashoffset="358.0" />
+  <polyline id="w-brkmeter" points="760.0,930.0 854.0,930.0" fill="none" stroke="#2B2D42" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="94.0" stroke-dashoffset="94.0" />
+  <polyline id="w-batt" points="805.0,960.0 805.0,780.0 760.0,780.0" fill="none" stroke="#2B2D42" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="225.0" stroke-dashoffset="225.0" />
+  <!-- lamp -->
+  <g id="w-lampg"><line x1="260" y1="678" x2="260" y2="730" stroke="#14213D" stroke-width="4"/>
+    <path d="M 228 760 L 292 760 L 278 730 L 242 730 Z" fill="#E9EEF3" stroke="#14213D" stroke-width="4"/>
+    <circle id="w-bulb" cx="260" cy="768" r="12" fill="#9AA8B6" stroke="#14213D" stroke-width="3"/>
+    <circle id="w-lampglow" cx="260" cy="780" r="140" fill="url(#lampglow)" opacity="0"/></g>
+  <!-- fridge -->
+  <g id="w-fridgeg" opacity="0"><rect x="172" y="900" width="120" height="196" rx="10" fill="#FFFFFF" stroke="#14213D" stroke-width="5"/>
+    <line x1="172" y1="962" x2="292" y2="962" stroke="#14213D" stroke-width="4"/><rect x="272" y="918" width="7" height="30" rx="3" fill="#14213D"/><rect x="272" y="980" width="7" height="44" rx="3" fill="#14213D"/>
+    <circle id="w-fridge-led" cx="190" cy="1078" r="6" fill="#9AA8B6"/></g>
+  <!-- air conditioners (wall units) -->
+  <g id="w-ac1g" opacity="0"><rect x="330" y="715" width="150" height="48" rx="12" fill="#FFFFFF" stroke="#14213D" stroke-width="5"/><line x1="346" y1="750" x2="464" y2="750" stroke="#9AA8B6" stroke-width="3"/>
+    <g id="w-ac1air" opacity="0" stroke="#2EC4F1" stroke-width="4" stroke-linecap="round" fill="none"><path d="M360 774 q 8 14 0 28"/><path d="M405 774 q 8 14 0 28"/><path d="M450 774 q 8 14 0 28"/></g></g>
+  <g id="w-ac2g" opacity="0"><rect x="330" y="811" width="150" height="48" rx="12" fill="#FFFFFF" stroke="#14213D" stroke-width="5"/><line x1="346" y1="846" x2="464" y2="846" stroke="#9AA8B6" stroke-width="3"/>
+    <g id="w-ac2air" opacity="0" stroke="#2EC4F1" stroke-width="4" stroke-linecap="round" fill="none"><path d="M360 870 q 8 14 0 28"/><path d="M405 870 q 8 14 0 28"/><path d="M450 870 q 8 14 0 28"/></g></g>
+  <!-- battery bank -->
+  <g id="w-batg" opacity="0"><rect x="775" y="960" width="60" height="135" rx="8" fill="#3D405B" stroke="#14213D" stroke-width="4"/>
+    <rect x="793" y="952" width="24" height="10" rx="3" fill="#14213D"/>
+    <rect id="w-batlevel" x="783" y="968" width="44" height="119" rx="4" fill="#2ECC71"/>
+    <text x="805.0" y="1039.5" text-anchor="middle" font-family="Inter" font-weight="900" font-size="34" fill="#14213D">+</text></g>
+  <g id="w-batx" opacity="0"><line x1="765" y1="950" x2="845" y2="1105" stroke="#E63946" stroke-width="9" stroke-linecap="round"/><line x1="845" y1="950" x2="765" y2="1105" stroke="#E63946" stroke-width="9" stroke-linecap="round"/></g>
+  <!-- breaker panel -->
+  <g id="w-brkg" opacity="0"><rect x="650" y="890" width="110" height="140" rx="8" fill="#DDE3EA" stroke="#14213D" stroke-width="5"/>
+    <rect x="668" y="908" width="32" height="18" rx="3" fill="#5C6B7A"/><rect x="710" y="908" width="32" height="18" rx="3" fill="#5C6B7A"/><rect x="668" y="936" width="32" height="18" rx="3" fill="#5C6B7A"/><rect x="710" y="936" width="32" height="18" rx="3" fill="#5C6B7A"/><rect x="668" y="964" width="32" height="18" rx="3" fill="#5C6B7A"/><rect x="710" y="964" width="32" height="18" rx="3" fill="#5C6B7A"/><rect x="668" y="992" width="32" height="18" rx="3" fill="#5C6B7A"/><rect x="710" y="992" width="32" height="18" rx="3" fill="#5C6B7A"/></g>
+  <!-- inverter -->
+  <g id="w-invg" style="transform-origin:705.0px 850px">
+    <rect id="w-inv-outline" x="650" y="700" width="110" height="150" rx="12" fill="#FFFFFF" stroke="#14213D" stroke-width="5" opacity="0"/>
+    <g id="w-inv-in" opacity="0"><rect x="664" y="718" width="82" height="54" rx="6" fill="#0E1B2A"/>
+      <line id="w-inv-dcline" x1="672" y1="745" x2="700" y2="745" stroke="#FFB020" stroke-width="5" stroke-linecap="round"/>
+      <path id="w-inv-sine" d="M 708 745 q 7 -18 14 0 t 14 0 t 14 0" fill="none" stroke="#2EC4F1" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="680" cy="800" r="7" id="w-inv-led" fill="#2ECC71"/>
+      <rect x="650" y="828" width="110" height="10" fill="var(--accent)"/></g>
+    <g id="w-inv-off" opacity="0"><rect x="660" y="756" width="90" height="44" rx="8" fill="#E63946"/><text x="705.0" y="788" text-anchor="middle" font-family="Inter" font-weight="900" font-size="30" fill="#FFFFFF">OFF</text></g>
+  </g>
+  <!-- question mark for the hook -->
+  <g id="w-q" opacity="0" transform="translate(470,420)"><circle r="44" fill="var(--accent)" stroke="#14213D" stroke-width="5"/><text y="18" text-anchor="middle" font-family="Inter" font-weight="900" font-size="56" fill="#FFFFFF">?</text></g>
+  <g id="w-spark" opacity="0"><circle r="16" fill="#FFB020" filter="url(#glow)"/></g>
+  <!-- blackout: grid line X -->
+  <g id="w-gridx" opacity="0" transform="translate(935,600)"><circle r="30" fill="#E63946" stroke="#14213D" stroke-width="4"/><path d="M-12,-12 L12,12 M12,-12 L-12,12" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/></g>
+  <g id="w-switch" opacity="0" transform="translate(867,930)"><circle r="9" fill="#14213D"/><line x1="0" y1="0" x2="-4" y2="-30" stroke="#14213D" stroke-width="6" stroke-linecap="round"/></g>
+  <!-- AC sine badge in the room -->
+  <g id="w-acsine" opacity="0" transform="translate(470,840)"><path id="w-acsine-p" d="M -120 0 q 20 -40 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0" fill="none" stroke="#2EC4F1" stroke-width="8" stroke-linecap="round" filter="url(#glow)"/></g>
+  <circle id="f-row-0" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-row-1" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-row-2" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-row-3" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-row-4" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-row-5" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-row-6" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-row-7" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-dc-0" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-dc-1" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-dc-2" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-dc-3" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-dc-4" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-dc-5" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-newrow-0" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-newrow-1" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-newrow-2" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-newrow-3" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-invbrk-0" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-invbrk-1" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-lamp-0" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-lamp-1" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-lamp-2" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-lamp-3" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-lamp-4" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-lamp-5" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-lamp-6" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-lamp-7" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-lamp-8" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-lamp-9" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-lamp-10" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-lamp-11" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-ac1-0" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-ac2-0" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-ac2-1" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-fridge-0" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-fridge-1" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-fridge-2" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-fridge-3" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-fridge-4" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-fridge-5" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-fridge-6" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-fridge-7" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-fridge-8" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-in-0" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-in-1" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-in-2" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-in-3" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-in-4" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-in-5" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-in-6" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-in-7" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-in-8" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-meter-in-0" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-meter-in-1" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-out-0" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-out-1" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-out-2" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-out-3" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-out-4" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-out-5" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-out-6" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-out-7" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-grid-out-8" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-meter-out-0" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-meter-out-1" r="7" fill="#2EC4F1" opacity="0" filter="url(#glow)"/>
+<circle id="f-batt-0" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-batt-1" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-batt-2" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-batt-3" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+<circle id="f-batt-4" r="7" fill="#FFB020" opacity="0" filter="url(#glow)"/>
+  <g id="lb-dc" opacity="0" transform="translate(420,430)"><g class="lbl-in"><rect x="-188" y="-26" width="376" height="52" rx="26" fill="#FFB020" stroke="#14213D" stroke-width="3"/><rect x="-168" y="14" width="336" height="4" rx="2" fill="var(--accent)" class="lbl-ul"/><text x="0" y="9" text-anchor="middle" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Direct current (DC)</text></g></g><g id="lb-acm" opacity="0" transform="translate(470,760)"><g class="lbl-in"><rect x="-232" y="-26" width="464" height="52" rx="26" fill="#2EC4F1" stroke="#14213D" stroke-width="3"/><rect x="-212" y="14" width="424" height="4" rx="2" fill="var(--accent)" class="lbl-ul"/><text x="0" y="9" text-anchor="middle" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Alternating current (AC)</text></g></g><g id="lb-inv" opacity="0" transform="translate(575,720)"><g class="lbl-in"><rect x="-92" y="-26" width="184" height="52" rx="26" fill="#FFFFFF" stroke="#14213D" stroke-width="3"/><rect x="-72" y="14" width="144" height="4" rx="2" fill="var(--accent)" class="lbl-ul"/><text x="0" y="9" text-anchor="middle" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Inverter</text></g></g><g id="lb-brk" opacity="0" transform="translate(560,960)"><g class="lbl-in"><rect x="-136" y="-26" width="272" height="52" rx="26" fill="#FFFFFF" stroke="#14213D" stroke-width="3"/><rect x="-116" y="14" width="232" height="4" rx="2" fill="var(--accent)" class="lbl-ul"/><text x="0" y="9" text-anchor="middle" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Breaker panel</text></g></g><g id="lb-lamp" opacity="0" transform="translate(205,800)"><g class="lbl-in"><rect x="-74" y="-26" width="149" height="52" rx="26" fill="#FFFFFF" stroke="#14213D" stroke-width="3"/><rect x="-54" y="14" width="109" height="4" rx="2" fill="var(--accent)" class="lbl-ul"/><text x="0" y="9" text-anchor="middle" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Lights</text></g></g><g id="lb-fridge" opacity="0" transform="translate(231,875)"><g class="lbl-in"><rect x="-74" y="-26" width="149" height="52" rx="26" fill="#FFFFFF" stroke="#14213D" stroke-width="3"/><rect x="-54" y="14" width="109" height="4" rx="2" fill="var(--accent)" class="lbl-ul"/><text x="0" y="9" text-anchor="middle" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Fridge</text></g></g><g id="lb-ac" opacity="0" transform="translate(445,800)"><g class="lbl-in"><rect x="-153" y="-26" width="306" height="52" rx="26" fill="#FFFFFF" stroke="#14213D" stroke-width="3"/><rect x="-133" y="14" width="266" height="4" rx="2" fill="var(--accent)" class="lbl-ul"/><text x="0" y="9" text-anchor="middle" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Air conditioner</text></g></g><g id="lb-ac2" opacity="0" transform="translate(405,885)"><g class="lbl-in"><rect x="-188" y="-26" width="376" height="52" rx="26" fill="#FFFFFF" stroke="#14213D" stroke-width="3"/><rect x="-168" y="14" width="336" height="4" rx="2" fill="var(--accent)" class="lbl-ul"/><text x="0" y="9" text-anchor="middle" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">2nd air conditioner</text></g></g><g id="lb-grid" opacity="0" transform="translate(905,548)"><g class="lbl-in"><rect x="-57" y="-26" width="114" height="52" rx="26" fill="#FFFFFF" stroke="#14213D" stroke-width="3"/><rect x="-37" y="14" width="74" height="4" rx="2" fill="var(--accent)" class="lbl-ul"/><text x="0" y="9" text-anchor="middle" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Grid</text></g></g><g id="lb-more" opacity="0" transform="translate(690,430)"><g class="lbl-in"><rect x="-118" y="-26" width="236" height="52" rx="26" fill="#FFFFFF" stroke="#14213D" stroke-width="3"/><rect x="-98" y="14" width="196" height="4" rx="2" fill="var(--accent)" class="lbl-ul"/><text x="0" y="9" text-anchor="middle" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">More panels</text></g></g><g id="lb-big" opacity="0" transform="translate(575,720)"><g class="lbl-in"><rect x="-153" y="-26" width="306" height="52" rx="26" fill="#FFFFFF" stroke="#14213D" stroke-width="3"/><rect x="-133" y="14" width="266" height="4" rx="2" fill="var(--accent)" class="lbl-ul"/><text x="0" y="9" text-anchor="middle" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Bigger inverter</text></g></g><g id="lb-meter" opacity="0" transform="translate(860,1000)"><g class="lbl-in"><rect x="-136" y="-26" width="272" height="52" rx="26" fill="#FFFFFF" stroke="#14213D" stroke-width="3"/><rect x="-116" y="14" width="232" height="4" rx="2" fill="var(--accent)" class="lbl-ul"/><text x="0" y="9" text-anchor="middle" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Two-way meter</text></g></g><g id="lb-bat" opacity="0" transform="translate(690,1070)"><g class="lbl-in"><rect x="-127" y="-26" width="254" height="52" rx="26" fill="#FFFFFF" stroke="#14213D" stroke-width="3"/><rect x="-107" y="14" width="214" height="4" rx="2" fill="var(--accent)" class="lbl-ul"/><text x="0" y="9" text-anchor="middle" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Battery bank</text></g></g><g id="lb-worker" opacity="0" transform="translate(875,700)"><g class="lbl-in"><rect x="-118" y="-26" width="236" height="52" rx="26" fill="#FFFFFF" stroke="#14213D" stroke-width="3"/><rect x="-98" y="14" width="196" height="4" rx="2" fill="var(--accent)" class="lbl-ul"/><text x="0" y="9" text-anchor="middle" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Line worker</text></g></g><g id="lb-hyb" opacity="0" transform="translate(560,720)"><g class="lbl-in"><rect x="-153" y="-26" width="306" height="52" rx="26" fill="#FFFFFF" stroke="#14213D" stroke-width="3"/><rect x="-133" y="14" width="266" height="4" rx="2" fill="var(--accent)" class="lbl-ul"/><text x="0" y="9" text-anchor="middle" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Hybrid inverter</text></g></g>
+</svg></div>
+  
+<div id="w-hud" style="position:absolute;left:60px;top:190px;width:960px;height:178px;opacity:0">
+  <svg width="960" height="178" viewBox="0 0 960 178" style="overflow:visible">
+    <rect x="0" y="0" width="960" height="178" rx="24" fill="#FFFFFFEE" stroke="#14213D" stroke-width="4"/>
+    <text x="28" y="66" font-family="Inter" font-weight="900" font-size="30" fill="#14213D">Power in</text>
+    <text x="28" y="140" font-family="Inter" font-weight="900" font-size="30" fill="#14213D">Home use</text>
+    <rect x="200" y="38" width="720" height="40" rx="10" fill="#E9EEF3"/>
+    <rect x="200" y="112" width="720" height="40" rx="10" fill="#E9EEF3"/>
+    <rect id="h-sun" x="200" y="38" width="0" height="40" rx="10" fill="#FFB020"/>
+    <rect id="h-clip" x="200" y="38" width="0" height="40" fill="url(#hatchh)"/>
+    <rect id="h-grid" x="200" y="38" width="0" height="40" fill="#8D99AE"/>
+    <rect id="h-bat" x="200" y="38" width="0" height="40" rx="10" fill="#2ECC71"/>
+    <text id="h-suntext" x="220" y="66" opacity="0" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Sun</text>
+    <rect id="h-use" x="200" y="112" width="0" height="40" rx="10" fill="#2EC4F1"/>
+    <g id="h-limit" opacity="0"><line id="h-limitline" x1="0" y1="26" x2="0" y2="90" stroke="#E63946" stroke-width="6" stroke-dasharray="8 6"/><text id="h-limittext" x="-10" y="27" text-anchor="end" font-family="Inter" font-weight="900" font-size="28" fill="#E63946">Inverter limit</text></g>
+    <text id="h-gridtext" x="0" y="66" opacity="0" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Grid</text>
+    <text id="h-battext" x="0" y="66" opacity="0" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Battery</text>
+    <text id="h-extratext" x="0" y="66" opacity="0" font-family="Inter" font-weight="900" font-size="28" fill="#14213D">Extra → grid</text>
+    <defs><pattern id="hatchh" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#FFE0A0"/><line x1="0" y1="0" x2="0" y2="12" stroke="#C98A00" stroke-width="4"/></pattern></defs>
+  </svg>
+</div>
+<div id="w-end" style="position:absolute;left:0;top:250px;width:1080px;text-align:center;opacity:0">
+  <div style="display:inline-block;padding:18px 34px;border-radius:24px;background:#FFFFFF;border:4px solid #14213D;font-family:Inter;font-weight:900;font-size:40px;color:#14213D">
+    <span style="color:#FFB020">Panels</span> → <span>Inverter</span> → <span style="color:var(--accent)">Your home</span></div></div>
+
+</div>
+<script>
+
+(function () {
+  const DUR = 77.78;
+  const T = {"q": 0.696, "spark": 4.261, "sun": 5.0, "panels": 5.609, "dc": 8.043, "wired": 9.696, "adds": 11.348, "acm": 15.783, "invdraw": 17.891, "invlbl": 18.391, "converts": 19.957, "sine": 21.609, "brk": 25.0, "lamp": 27.087, "fridge": 27.783, "ac1": 28.652, "plug": 29.87, "ac2": 31.348, "cant": 33.522, "grid": 34.739, "sunrun": 37.174, "addp": 38.913, "bigger": 41.174, "limits": 43.261, "noon": 46.304, "extra": 49.348, "meter": 52.652, "night": 54.652, "stop": 55.478, "bat": 59.0, "stores": 59.87, "without": 62.043, "pull": 62.913, "blackout": 64.913, "shuts": 67.348, "workers": 69.478, "only": 71.348, "hybrid": 72.391, "keep": 73.348, "know": 74.826, "send": 76.826};
+  const FLOWS = [{"id": "f-row", "pts": [[176.44, 634.9], [625.32, 634.9]], "kind": "dc", "n": 8, "on": [[9.696, 14.304]]}, {"id": "f-dc", "pts": [[624.6, 631.5], [624.6, 662], [705, 662], [705, 700]], "kind": "dc", "n": 6, "on": [[12.304, 55.552], [71.748, 77.78]]}, {"id": "f-newrow", "pts": [[639.8, 634.9], [813.56, 634.9]], "kind": "dc", "n": 4, "on": [[39.735, 55.552]]}, {"id": "f-invbrk", "pts": [[705, 850], [705, 890]], "kind": "ac", "n": 2, "drift": 1, "on": [[24.478, 55.552], [59.696, 62.043], [73.348, 77.78]]}, {"id": "f-lamp", "pts": [[650, 915], [560, 915], [560, 678], [260, 678]], "kind": "ac", "n": 12, "drift": 1, "on": [[26.787, 65.783], [73.609, 77.78]]}, {"id": "f-ac1", "pts": [[405, 678], [405, 715]], "kind": "ac", "n": 1, "drift": 1, "on": [[28.652, 65.783], [73.609, 77.78]]}, {"id": "f-ac2", "pts": [[560, 835], [482, 835]], "kind": "ac", "n": 2, "drift": 1, "on": [[31.696, 65.783]]}, {"id": "f-fridge", "pts": [[650, 1010], [292, 1010]], "kind": "ac", "n": 9, "drift": 1, "on": [[27.483, 65.783], [73.609, 77.78]]}, {"id": "f-grid-in", "pts": [[984, 594], [880, 612], [880, 904]], "kind": "ac", "n": 9, "drift": 1, "on": [[34.739, 37.174], [55.778, 59.0], [62.913, 64.904]]}, {"id": "f-meter-in", "pts": [[854, 930], [760, 930]], "kind": "ac", "n": 2, "drift": 1, "on": [[34.739, 37.174], [55.778, 59.0], [62.913, 64.904]]}, {"id": "f-grid-out", "pts": [[880, 904], [880, 612], [984, 594]], "kind": "ac", "n": 9, "drift": 1, "on": [[49.348, 54.478]]}, {"id": "f-meter-out", "pts": [[760, 930], [854, 930]], "kind": "ac", "n": 2, "drift": 1, "on": [[49.348, 54.478]]}, {"id": "f-batt", "pts": [[805, 960], [805, 780], [760, 780]], "kind": "dc", "n": 5, "on": [[59.696, 62.043], [71.90899999999999, 77.78]]}];
+  const DRAWN = [["w-drop", 397.5461984156701, 0.2, 1.2], ["w-row", 448.88000000000005, 9.696, 0.9], ["w-newrow", 173.76, 39.435, 0.4], ["w-dc", 148.89999999999998, 12.304, 1.1], ["w-invbrk", 40.0, 24.278000000000002, 0.4], ["w-lamp", 627.0, 26.539, 0.7], ["w-ac1", 37.0, 28.352, 0.3], ["w-ac2", 78.0, 31.348, 0.35], ["w-fridge", 358.0, 27.452, 0.6], ["w-brkmeter", 94.0, 0.2, 1.0], ["w-batt", 225.0, 59.2, 0.6]];
+  const LABELS = [["lb-dc", 8.043, 14.304], ["lb-acm", 15.783, 17.991], ["lb-inv", 18.391, 23.0], ["lb-brk", 25.0, 29.57], ["lb-lamp", 27.087, 29.87], ["lb-fridge", 27.783, 29.87], ["lb-ac", 28.652, 30.470000000000002], ["lb-ac2", 31.348, 33.087], ["lb-grid", 34.739, 37.174], ["lb-more", 39.174, 40.717], ["lb-big", 41.174, 42.435], ["lb-meter", 52.652, 54.478], ["lb-bat", 59.0, 62.043], ["lb-worker", 69.478, 71.348], ["lb-hyb", 72.391, 75.58]];
+  const CAMS = [[0.0, -5.0, -70.0, 1.0], [4.3, -37.700000000000045, -116.20000000000005, 1.06], [5.0, -37.700000000000045, -116.20000000000005, 1.06], [5.9, -174.0, -252.0, 1.7], [12.2, -212.5, -288.75, 1.75], [13.6, -484.0, -404.0, 1.6], [14.3, -484.0, -404.0, 1.6], [15.2, -24.0, -332.0, 1.2], [17.0, -24.0, -332.0, 1.2], [17.9, -870.0, -850.0, 2.0], [22.6, -905.2499999999998, -888.7499999999998, 2.05], [23.5, -650.0, -796.0, 1.7], [26.0, -650.0, -796.0, 1.7], [26.9, -24.0, -332.0, 1.2], [29.8, -24.0, -332.0, 1.2], [30.7, -5.0, -100.0, 1.0], [52.2, -5.0, -100.0, 1.0], [53.0, -1008.0, -884.0, 1.8], [54.2, -1008.0, -884.0, 1.8], [55.0, -5.0, -100.0, 1.0], [58.5, -5.0, -100.0, 1.0], [59.3, -540.0, -740.0, 1.5], [61.8, -540.0, -740.0, 1.5], [62.6, -5.0, -90.0, 1.0], [69.1, -5.0, -90.0, 1.0], [69.9, -948.0, -420.0, 1.6], [71.0, -948.0, -420.0, 1.6], [71.9, -425.9999999999999, -518.0, 1.4], [74.6, -425.9999999999999, -518.0, 1.4], [75.5, 22.25, -41.0, 0.95], [77.78, 11.350000000000023, -56.60000000000002, 0.97]];
+  const $ = (s) => document.querySelector(s);
+  const tl = gsap.timeline({ paused: true });
+
+  // ---------- camera ----------
+  gsap.set('#w-cam', { x: CAMS[0][1], y: CAMS[0][2], scale: CAMS[0][3] });
+  for (let i = 1; i < CAMS.length; i++) {
+    const a = CAMS[i - 1], b = CAMS[i];
+    if (a[1] === b[1] && a[2] === b[2] && a[3] === b[3]) continue;
+    tl.fromTo('#w-cam', { x: a[1], y: a[2], scale: a[3] }, { x: b[1], y: b[2], scale: b[3], duration: b[0] - a[0], ease: (b[0] - a[0]) > 2 ? 'none' : 'power2.inOut', immediateRender: false }, a[0]);
+  }
+
+  // ---------- drawn wires ----------
+  for (const [id, L, t0, d] of DRAWN) tl.fromTo('#' + id, { attr: { 'stroke-dashoffset': L } }, { attr: { 'stroke-dashoffset': 0 }, duration: d, ease: 'power2.inOut', immediateRender: false }, t0);
+
+  // ---------- labels (pop in, fade out) ----------
+  for (const [id, t0, t1] of LABELS) {
+    tl.fromTo('#' + id, { opacity: 0 }, { opacity: 1, duration: 0.15, ease: 'none', immediateRender: false }, t0);
+    tl.fromTo('#' + id + ' .lbl-in', { scale: 0.6, transformOrigin: '50% 50%' }, { scale: 1, duration: 0.45, ease: 'back.out(1.6)', immediateRender: false }, t0);
+    tl.fromTo('#' + id, { opacity: 1 }, { opacity: 0, duration: 0.2, ease: 'power2.in', immediateRender: false }, Math.max(t0 + 0.6, t1 - 0.2));
+  }
+
+  // ---------- sky / time of day ----------
+  const sky = (t, c, d) => tl.to('#w-sky', { attr: { fill: c }, duration: d, ease: 'power2.inOut' }, t);
+  sky(T.noon - 0.1, '#4FB8FF', 0.6); sky(T.night - 0.2, '#0D1B3D', 0.8); sky(T.blackout - 0.4, '#7D8A99', 0.6);
+  gsap.set('#w-sun', { x: 180, y: 330 });
+  tl.fromTo('#w-sun', { x: 180, y: 330 }, { x: 230, y: 300, duration: T.noon - 0.2, ease: 'none', immediateRender: false }, 0);
+  tl.fromTo('#w-sun', { x: 230, y: 300 }, { x: 540, y: 240, duration: 0.9, ease: 'power2.inOut', immediateRender: false }, T.noon - 0.2);
+  tl.fromTo('#w-sun', { x: 540, y: 240 }, { x: 1050, y: 760, duration: 1.0, ease: 'power2.in', immediateRender: false }, T.night - 0.3);
+  tl.fromTo('#w-sun', { x: 160, y: 760, opacity: 0.55 }, { x: 230, y: 320, opacity: 0.55, duration: 0.9, ease: 'power2.out', immediateRender: false }, T.blackout - 0.4);
+  tl.fromTo('#w-sun', { opacity: 0.55 }, { opacity: 1, duration: 0.5, immediateRender: false }, T.only);
+  tl.to('#w-sun', { opacity: 0, duration: 0.3 }, T.night + 0.6);
+  tl.fromTo('#w-stars', { opacity: 0 }, { opacity: 0.9, duration: 0.8, immediateRender: false }, T.night);
+  tl.fromTo('#w-moon', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, immediateRender: false }, T.night);
+  tl.to('#w-stars', { opacity: 0, duration: 0.5 }, T.blackout - 0.4);
+  tl.to('#w-moon', { opacity: 0, duration: 0.5 }, T.blackout - 0.4);
+  tl.fromTo('#w-roomdark', { opacity: 0 }, { opacity: 0.55, duration: 0.8, immediateRender: false }, T.night);
+  tl.to('#w-roomdark', { opacity: 0.25, duration: 0.6 }, T.blackout - 0.4);
+  tl.to('#w-roomdark', { opacity: 0.0, duration: 0.6 }, T.keep);
+
+  // ---------- hook ----------
+  tl.fromTo('#w-q', { opacity: 0, scale: 0.3, transformOrigin: '50% 50%' }, { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(2)', immediateRender: false }, T.q);
+  tl.to('#w-q', { y: -14, duration: 0.6, ease: 'sine.inOut', yoyo: true, repeat: 3 }, T.q + 0.5);
+  tl.to('#w-q', { opacity: 0, scale: 0.4, duration: 0.25, ease: 'power3.in' }, T.spark - 0.1);
+  tl.fromTo('#w-spark', { opacity: 0, x: 420, y: 560, scale: 0.2 }, { opacity: 1, scale: 1.4, duration: 0.3, ease: 'back.out(3)', immediateRender: false }, T.spark);
+  tl.to('#w-spark', { opacity: 0, scale: 0.4, duration: 0.3 }, T.sun);
+
+  // ---------- panels ----------
+  const pan = gsap.utils.toArray('[id^="w-p-"]');
+  pan.forEach((p, k) => tl.fromTo(p, { opacity: 0, scale: 0.6, transformOrigin: '50% 50%' }, { opacity: 1, scale: 1, duration: 0.35, ease: 'back.out(1.8)', immediateRender: false }, 0.15 + k * 0.08));
+  tl.fromTo('#w-junc', { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, 0.8);
+  tl.fromTo('#w-rays', { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: false }, T.sun);
+  tl.fromTo('#w-rays', { attr: { 'stroke-dashoffset': 0 } }, { attr: { 'stroke-dashoffset': -400 }, duration: T.wired - T.sun, ease: 'none', immediateRender: false }, T.sun);
+  tl.to('#w-rays', { opacity: 0, duration: 0.4 }, T.wired);
+  pan.forEach((p, k) => tl.fromTo(p.querySelector('.pglint'), { opacity: 0 }, { opacity: 0.55, duration: 0.18, yoyo: true, repeat: 1, immediateRender: false }, T.panels + k * 0.12));
+  const panN = gsap.utils.toArray('[id^="w-pn-"]');
+  panN.forEach((p, k) => tl.fromTo(p, { opacity: 0, scale: 0.3, y: -60, transformOrigin: '50% 50%' }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: 'back.out(1.8)', immediateRender: false }, T.addp + 0.2 + k * 0.12));
+  [...pan, ...panN].forEach((p) => tl.to(p.querySelector('.pfill'), { attr: { fill: '#0C1E40' }, duration: 0.6 }, T.stop));
+  [...pan, ...panN].forEach((p) => tl.to(p.querySelector('.pfill'), { attr: { fill: '#1E4FA3' }, duration: 0.6 }, T.blackout - 0.3));
+
+  // ---------- house: AC badge, inverter, breaker, loads ----------
+  tl.fromTo('#w-acsine', { opacity: 0, scale: 0.5, transformOrigin: '50% 50%' }, { opacity: 1, scale: 1, duration: 0.4, ease: 'back.out(1.6)', immediateRender: false }, T.acm - 0.1);
+  tl.fromTo('#w-acsine-p', { x: 0 }, { x: -80, duration: 2.4, ease: 'none', immediateRender: false }, T.acm);
+  tl.to('#w-acsine', { opacity: 0, duration: 0.3 }, T.invdraw);
+  tl.fromTo('#w-inv-outline', { opacity: 0, scaleY: 0, transformOrigin: '50% 100%' }, { opacity: 1, scaleY: 1, duration: 0.5, ease: 'power3.out', immediateRender: false }, T.invdraw);
+  tl.fromTo('#w-inv-in', { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: false }, T.invdraw + 0.4);
+  tl.fromTo('#w-inv-dcline', { opacity: 1 }, { opacity: 0.25, duration: 0.4, immediateRender: false }, T.converts);
+  tl.fromTo('#w-inv-sine', { scale: 0.4, transformOrigin: '0% 50%' }, { scale: 1.25, duration: 0.6, ease: 'back.out(2)', immediateRender: false }, T.sine);
+  tl.to('#w-inv-dcline', { opacity: 1, duration: 0.3 }, T.sine + 1.0);
+  tl.to('#w-inv-sine', { scale: 1, duration: 0.3 }, T.sine + 1.0);
+  tl.fromTo('#w-brkg', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out', immediateRender: false }, T.brk - 0.3);
+  tl.fromTo('#w-lampglow', { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: false }, T.lamp);
+  tl.fromTo('#w-bulb', { attr: { fill: '#9AA8B6' } }, { attr: { fill: '#FFE066' }, duration: 0.2, immediateRender: false }, T.lamp);
+  tl.fromTo('#w-fridgeg', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.4, ease: 'back.out(1.5)', immediateRender: false }, T.fridge - 0.5);
+  tl.fromTo('#w-fridge-led', { attr: { fill: '#9AA8B6' } }, { attr: { fill: '#2ECC71' }, duration: 0.2, immediateRender: false }, T.fridge);
+  tl.fromTo('#w-ac1g', { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, ease: 'back.out(1.5)', immediateRender: false }, T.ac1 - 0.5);
+  tl.fromTo('#w-ac1air', { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: false }, T.ac1 + 0.2);
+  tl.fromTo('#w-ac2g', { opacity: 0, scale: 0.4, transformOrigin: '50% 50%' }, { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(2)', immediateRender: false }, T.ac2 - 0.2);
+  tl.fromTo('#w-ac2air', { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: false }, T.ac2 + 0.4);
+  // bigger inverter
+  tl.fromTo('#w-invg', { scale: 1, svgOrigin: '705 850' }, { scale: 1.22, svgOrigin: '705 850', duration: 0.5, ease: 'back.out(2)', immediateRender: false }, T.bigger);
+  // night lighting: lamp keeps on (grid/battery), AC units idle at night
+  tl.to('#w-ac2air', { opacity: 0, duration: 0.3 }, T.noon);
+  tl.to('#w-ac2g', { opacity: 0.35, duration: 0.3 }, T.noon);
+  // battery bank
+  tl.fromTo('#w-batg', { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.45, ease: 'back.out(1.5)', immediateRender: false }, T.bat - 0.1);
+  tl.fromTo('#w-batlevel', { scaleY: 1, transformOrigin: '50% 100%' }, { scaleY: 0.55, duration: T.without - T.stores, ease: 'none', immediateRender: false }, T.stores);
+  tl.to('#w-batg', { opacity: 0.25, duration: 0.3 }, T.without);
+  tl.fromTo('#w-batx', { opacity: 0, scale: 0.4, transformOrigin: '50% 50%' }, { opacity: 1, scale: 1, duration: 0.3, ease: 'back.out(2)', immediateRender: false }, T.without);
+  tl.to('#w-batx', { opacity: 0, duration: 0.2 }, T.blackout - 0.4);
+  tl.to('#w-batg', { opacity: 0, duration: 0.2 }, T.blackout - 0.4);
+  tl.to('#w-batlevel', { scaleY: 1, duration: 0.01 }, T.blackout - 0.2);
+  tl.to('#w-batg', { opacity: 1, duration: 0.4 }, T.only + 0.2);
+  // meter
+  tl.fromTo('.needle', { rotation: 0 }, { rotation: 720, duration: T.extra - T.grid, ease: 'none', immediateRender: false }, T.grid);
+  tl.fromTo('.needle', { rotation: 720 }, { rotation: 0, duration: T.night - T.extra, ease: 'none', immediateRender: false }, T.extra);
+  tl.fromTo('.needle', { rotation: 0 }, { rotation: 360, duration: T.blackout - T.pull, ease: 'none', immediateRender: false }, T.pull);
+  tl.fromTo('#w-meter-arrows', { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: false }, T.meter);
+  tl.to('#w-meter-arrows', { opacity: 0, duration: 0.3 }, T.night);
+  // blackout
+  tl.fromTo('#w-gridx', { opacity: 0, scale: 0.3, transformOrigin: '50% 50%' }, { opacity: 1, scale: 1, duration: 0.35, ease: 'back.out(2.5)', immediateRender: false }, T.blackout);
+  tl.to('#w-drop', { attr: { stroke: '#E63946' }, duration: 0.3 }, T.blackout);
+  tl.to('#w-lampglow', { opacity: 0, duration: 0.15 }, T.blackout + 0.4);
+  tl.to('#w-bulb', { attr: { fill: '#9AA8B6' }, duration: 0.15 }, T.blackout + 0.4);
+  tl.to('#w-fridge-led', { attr: { fill: '#9AA8B6' }, duration: 0.15 }, T.blackout + 0.4);
+  tl.to('#w-ac1air', { opacity: 0, duration: 0.15 }, T.blackout + 0.4);
+  tl.fromTo('#w-inv-off', { opacity: 0, scale: 0.5, transformOrigin: '50% 50%' }, { opacity: 1, scale: 1, duration: 0.3, ease: 'back.out(2.5)', immediateRender: false }, T.shuts);
+  tl.to('#w-inv-led', { attr: { fill: '#E63946' }, duration: 0.1 }, T.shuts);
+  tl.fromTo('#w-worker', { opacity: 0, y: 140 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', immediateRender: false }, T.workers - 0.6);
+  tl.fromTo('#w-shield', { opacity: 0, scale: 0.3, transformOrigin: '50% 50%' }, { opacity: 1, scale: 1, duration: 0.4, ease: 'back.out(2.5)', immediateRender: false }, T.workers);
+  tl.to(['#w-shield'], { opacity: 0, duration: 0.3 }, T.only + 1.0);
+  // hybrid: house islands from the grid (switch opens), inverter back on, lights on
+  tl.fromTo('#w-switch', { opacity: 0, rotation: 0 }, { opacity: 1, rotation: -55, duration: 0.4, ease: 'back.out(2)', immediateRender: false }, T.hybrid);
+  tl.to('#w-inv-off', { opacity: 0, duration: 0.2 }, T.hybrid);
+  tl.to('#w-inv-led', { attr: { fill: '#2ECC71' }, duration: 0.1 }, T.hybrid);
+  tl.to('#w-lampglow', { opacity: 1, duration: 0.3 }, T.keep + 0.4);
+  tl.to('#w-bulb', { attr: { fill: '#FFE066' }, duration: 0.2 }, T.keep + 0.4);
+  tl.to('#w-fridge-led', { attr: { fill: '#2ECC71' }, duration: 0.2 }, T.keep + 0.4);
+  tl.to('#w-ac1air', { opacity: 1, duration: 0.3 }, T.keep + 0.4);
+  tl.to('#w-worker', { opacity: 0, duration: 0.3 }, T.know);
+  tl.fromTo('#w-end', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: 'expo.out', immediateRender: false }, T.know);
+
+  // ---------- HUD bars (fractions of 720 px) ----------
+  const BAR = 720, X0 = 200;
+  tl.fromTo('#w-hud', { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.45, ease: 'expo.out', immediateRender: false }, T.plug);
+  const bar = (id, t, f, d = 0.5) => tl.to(id, { attr: { width: BAR * f }, duration: d, ease: 'power2.inOut' }, t);
+  const at = (id, t, x0f, f, d = 0.5) => tl.to(id, { attr: { x: X0 + BAR * x0f, width: BAR * f }, duration: d, ease: 'power2.inOut' }, t);
+  bar('#h-sun', T.plug + 0.2, 0.55); tl.fromTo('#h-suntext', { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: false }, T.plug + 0.5); bar('#h-use', T.plug + 0.3, 0.45);
+  bar('#h-use', T.ac2, 0.75);
+  at('#h-grid', T.grid - 0.2, 0.55, 0.0, 0.01); at('#h-grid', T.grid, 0.55, 0.20, 0.6);
+  tl.fromTo('#h-gridtext', { opacity: 0, attr: { x: X0 + BAR * 0.57 } }, { opacity: 1, duration: 0.3, immediateRender: false }, T.grid + 0.3);
+  // more panels: sun wants 0.9 but the inverter caps it at 0.65
+  tl.set('#h-limit', { attr: { transform: `translate(${X0 + BAR * 0.65},0)` } }, T.addp);
+  tl.fromTo('#h-limit', { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: false }, T.addp + 0.4);
+  bar('#h-sun', T.addp + 0.4, 0.65);
+  at('#h-clip', T.addp + 0.4, 0.65, 0.0, 0.01); at('#h-clip', T.addp + 0.5, 0.65, 0.25, 0.5);
+  at('#h-grid', T.addp + 0.4, 0.65, 0.10, 0.5);
+  tl.to('#h-gridtext', { opacity: 0, duration: 0.2 }, T.addp + 0.4);
+  // bigger inverter: the limit moves up, the cap disappears, no grid needed
+  tl.to('#h-limit', { attr: { transform: `translate(${X0 + BAR * 0.93},0)` }, duration: 0.6, ease: 'power2.inOut' }, T.bigger);
+  at('#h-clip', T.bigger, 0.9, 0.0, 0.6); bar('#h-sun', T.bigger, 0.9, 0.6); at('#h-grid', T.bigger, 0.9, 0.0, 0.4);
+  tl.to('#h-limittext', { scale: 1.25, transformOrigin: '50% 100%', duration: 0.25, yoyo: true, repeat: 3 }, T.limits);
+  // noon: use drops, extra goes to the grid
+  bar('#h-use', T.noon + 0.2, 0.45);
+  tl.fromTo('#h-extratext', { opacity: 0, attr: { x: X0 + BAR * 0.47 } }, { opacity: 1, duration: 0.3, immediateRender: false }, T.extra);
+  tl.to('#h-extratext', { opacity: 0, duration: 0.2 }, T.night);
+  tl.to('#w-hud', { opacity: 0, duration: 0.3 }, T.meter - 0.6);
+  tl.to('#w-hud', { opacity: 1, duration: 0.3 }, T.night + 0.3);
+  // night: sun 0; battery covers, then grid
+  bar('#h-sun', T.stop, 0.0, 0.6); tl.to('#h-suntext', { opacity: 0, duration: 0.2 }, T.stop); tl.to('#h-limit', { opacity: 0, duration: 0.3 }, T.stop);
+  at('#h-grid', T.stop, 0, 0.0, 0.01); at('#h-grid', T.stop + 0.05, 0, 0.45, 0.5);
+  tl.to('#h-gridtext', { opacity: 1, attr: { x: X0 + 20 }, duration: 0.3 }, T.stop + 0.4);
+  at('#h-grid', T.bat, 0, 0.0, 0.4); tl.to('#h-gridtext', { opacity: 0, duration: 0.2 }, T.bat);
+  at('#h-bat', T.bat, 0, 0.45, 0.6);
+  tl.fromTo('#h-battext', { opacity: 0, attr: { x: X0 + 20 } }, { opacity: 1, duration: 0.3, immediateRender: false }, T.bat + 0.4);
+  at('#h-bat', T.without, 0, 0.0, 0.4); tl.to('#h-battext', { opacity: 0, duration: 0.2 }, T.without);
+  at('#h-grid', T.pull - 0.05, 0, 0.0, 0.01); at('#h-grid', T.pull, 0, 0.45, 0.5);
+  tl.to('#h-gridtext', { opacity: 1, attr: { x: X0 + 20 }, duration: 0.3 }, T.pull + 0.3);
+  tl.to('#w-hud', { opacity: 0, y: -40, duration: 0.3, ease: 'power3.in' }, T.blackout - 0.4);
+
+  // ---------- energy dots: one proxy tween drives every dot from timeline time ----------
+  const geo = FLOWS.map((f) => {
+    const P = f.pts, L = [0];
+    for (let i = 1; i < P.length; i++) L.push(L[i - 1] + Math.hypot(P[i][0] - P[i - 1][0], P[i][1] - P[i - 1][1]));
+    const els = []; for (let k = 0; k < f.n; k++) els.push(document.getElementById(f.id + '-' + k));
+    return { f, P, L, tot: L[L.length - 1], els };
+  });
+  const pointAt = (g, d) => {
+    d = Math.max(0, Math.min(g.tot, d));
+    for (let i = 1; i < g.P.length; i++) if (d <= g.L[i]) { const q = (d - g.L[i - 1]) / Math.max(1e-6, g.L[i] - g.L[i - 1]); return [g.P[i - 1][0] + (g.P[i][0] - g.P[i - 1][0]) * q, g.P[i - 1][1] + (g.P[i][1] - g.P[i - 1][1]) * q]; }
+    return g.P[g.P.length - 1];
+  };
+  const env = (t, on) => { let a = 0; for (const [t0, t1] of on) a = Math.max(a, Math.min(1, (t - t0) / 0.3, (t1 - t) / 0.3)); return Math.max(0, a); };
+  function drawDots(t) {
+    for (const g of geo) {
+      const a = env(t, g.f.on);
+      g.els.forEach((el, k) => {
+        if (a <= 0) { el.setAttribute('opacity', 0); return; }
+        let d;
+        if (g.f.kind === 'dc') d = ((t * 120 + k * g.tot / g.f.n) % g.tot);
+        else { const sp = g.tot / g.f.n; d = ((k + 0.5) * sp + (g.f.drift ? (t * 22) % sp : 0)) % g.tot + 11 * Math.sin(t * Math.PI * 2 * 1.6); }
+        const [x, y] = pointAt(g, d);
+        const edge = Math.min(1, d / 18, (g.tot - d) / 18);
+        el.setAttribute('cx', x.toFixed(1)); el.setAttribute('cy', y.toFixed(1)); el.setAttribute('opacity', (a * Math.max(0, edge)).toFixed(3));
+      });
+    }
+  }
+  const proxy = { t: 0 };
+  tl.fromTo(proxy, { t: 0 }, { t: DUR, duration: DUR, ease: 'none', immediateRender: false, onUpdate: () => drawDots(proxy.t) }, 0);
+  drawDots(0);
+  window.__timelines['world'] = tl;
+})();
+
+</script>
+</template>

@@ -1,0 +1,8 @@
+16c16
+< const ACCENT = '#FF6B35';                 // main accent: labels, emphasis, highlights
+---
+> const ACCENT = '#8B5CF6';                 // main accent: labels, emphasis, highlights
+32c32
+< const INV_LABEL = T.inv;                  // when the "Inverter" label appears
+---
+> const INV_LABEL = T.inv + 0.5;                  // when the "Inverter" label appears

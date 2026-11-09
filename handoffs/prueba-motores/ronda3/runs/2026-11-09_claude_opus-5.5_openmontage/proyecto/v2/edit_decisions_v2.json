@@ -1,0 +1,1553 @@
+{
+ "version": "1.0",
+ "render_runtime": "remotion",
+ "renderer_family": "explainer-data",
+ "playbook": "flat-motion-graphics",
+ "composition_mode": "templated",
+ "tailPaddingSeconds": 0,
+ "cuts": [
+  {
+   "id": "c01",
+   "type": "text_card",
+   "text": "Where does the\nsolar power go?",
+   "fontSize": 96,
+   "in_seconds": 0,
+   "out_seconds": 5.0,
+   "backgroundVideo": "/Users/ashleyarriaga/clam-tests/openmontage/projects/solar-residencial/assets/video/sel/house_cc0.mp4",
+   "backgroundVideoStart": 1,
+   "backgroundOverlay": 0.45,
+   "source": "none",
+   "accentColor": "#22C55E"
+  },
+  {
+   "id": "c02",
+   "type": "callout",
+   "title": "Sunlight \u2192 panels",
+   "text": "Each panel makes a little Direct current (DC).",
+   "in_seconds": 5.0,
+   "out_seconds": 9.435,
+   "backgroundVideo": "/Users/ashleyarriaga/clam-tests/openmontage/projects/solar-residencial/assets/video/sel/house_cc0.mp4",
+   "backgroundVideoStart": 14,
+   "backgroundOverlay": 0.6,
+   "source": "none",
+   "accentColor": "#22C55E",
+   "fontSize": 54,
+   "titleFontSize": 64
+  },
+  {
+   "id": "c03",
+   "type": "text_card",
+   "text": "Panels wired together\n\u2192 their power adds up\n\u2192 one single cable",
+   "in_seconds": 9.435,
+   "out_seconds": 14.304,
+   "source": "none",
+   "accentColor": "#22C55E",
+   "fontSize": 72
+  },
+  {
+   "id": "c04",
+   "type": "comparison",
+   "title": "Two kinds of current",
+   "leftLabel": "Panels make",
+   "leftValue": "Direct current (DC)",
+   "rightLabel": "Your house runs on",
+   "rightValue": "Alternating current (AC)",
+   "in_seconds": 14.304,
+   "out_seconds": 18.891,
+   "source": "none",
+   "accentColor": "#22C55E"
+  },
+  {
+   "id": "c05",
+   "type": "callout",
+   "title": "Inverter",
+   "text": "A box that converts Direct current (DC) into Alternating current (AC).",
+   "in_seconds": 18.891,
+   "out_seconds": 23.0,
+   "source": "none",
+   "accentColor": "#22C55E",
+   "fontSize": 54,
+   "titleFontSize": 64
+  },
+  {
+   "id": "c06",
+   "type": "text_card",
+   "text": "Inverter\n\u2192 breaker panel\n\u2192 lights \u00b7 fridge \u00b7 air conditioner",
+   "in_seconds": 23.0,
+   "out_seconds": 29.87,
+   "source": "none",
+   "accentColor": "#22C55E",
+   "fontSize": 72
+  },
+  {
+   "id": "c07",
+   "type": "bar_chart",
+   "title": "Add a second air conditioner",
+   "chartData": [
+    {
+     "label": "Solar makes",
+     "value": 60
+    },
+    {
+     "label": "House uses",
+     "value": 90
+    },
+    {
+     "label": "Grid covers",
+     "value": 30
+    }
+   ],
+   "showValues": false,
+   "in_seconds": 29.87,
+   "out_seconds": 37.174,
+   "source": "none",
+   "accentColor": "#22C55E"
+  },
+  {
+   "id": "c08",
+   "type": "progress_bar",
+   "title": "The inverter limits power at once",
+   "progress": 100,
+   "progressLabel": "More panels + sometimes a bigger inverter",
+   "in_seconds": 37.174,
+   "out_seconds": 46.13,
+   "source": "none",
+   "accentColor": "#22C55E"
+  },
+  {
+   "id": "c09",
+   "type": "callout",
+   "title": "Noon",
+   "text": "You make more than you use \u2192 the extra flows to the grid. In many places a two-way meter counts it.",
+   "in_seconds": 46.13,
+   "out_seconds": 54.478,
+   "source": "none",
+   "accentColor": "#22C55E",
+   "fontSize": 54,
+   "titleFontSize": 64
+  },
+  {
+   "id": "c10",
+   "type": "comparison",
+   "title": "At night the panels stop",
+   "leftLabel": "With a battery bank",
+   "leftValue": "Your own stored power",
+   "rightLabel": "Without batteries",
+   "rightValue": "Power from the grid",
+   "in_seconds": 54.478,
+   "out_seconds": 64.304,
+   "source": "none",
+   "accentColor": "#22C55E"
+  },
+  {
+   "id": "c11",
+   "type": "callout",
+   "title": "Blackout",
+   "text": "A normal grid-tied system shuts itself off to protect the workers fixing the lines.",
+   "in_seconds": 64.304,
+   "out_seconds": 71.348,
+   "backgroundVideo": "/Users/ashleyarriaga/clam-tests/openmontage/projects/solar-residencial/assets/video/sel/linemen_ccby.mp4",
+   "backgroundVideoStart": 0,
+   "backgroundOverlay": 0.6,
+   "source": "none",
+   "accentColor": "#22C55E",
+   "fontSize": 54,
+   "titleFontSize": 64
+  },
+  {
+   "id": "c12",
+   "type": "text_card",
+   "text": "Batteries\n+ hybrid inverter\n= lights on",
+   "fontSize": 88,
+   "in_seconds": 71.348,
+   "out_seconds": 74.826,
+   "backgroundVideo": "/Users/ashleyarriaga/clam-tests/openmontage/projects/solar-residencial/assets/video/sel/nightlights_pd.mp4",
+   "backgroundVideoStart": 0,
+   "backgroundOverlay": 0.55,
+   "source": "none",
+   "accentColor": "#22C55E"
+  },
+  {
+   "id": "c13",
+   "type": "text_card",
+   "text": "Thinking about solar?\nSend them this.",
+   "fontSize": 84,
+   "in_seconds": 74.826,
+   "out_seconds": 77.78,
+   "source": "none",
+   "accentColor": "#22C55E"
+  }
+ ],
+ "overlays": [],
+ "captions": [
+  {
+   "word": "Ever",
+   "startMs": 0,
+   "endMs": 261,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "wondered",
+   "startMs": 348,
+   "endMs": 609,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "where",
+   "startMs": 696,
+   "endMs": 783,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "the",
+   "startMs": 870,
+   "endMs": 957,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "power",
+   "startMs": 1043,
+   "endMs": 1391,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "from",
+   "startMs": 1478,
+   "endMs": 1565,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "those",
+   "startMs": 1652,
+   "endMs": 1826,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "roof",
+   "startMs": 1913,
+   "endMs": 2087,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "panels",
+   "startMs": 2174,
+   "endMs": 2522,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "actually",
+   "startMs": 2609,
+   "endMs": 3043,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "goes?",
+   "startMs": 3130,
+   "endMs": 3783,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "Let's",
+   "startMs": 4000,
+   "endMs": 4217,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "follow",
+   "startMs": 4261,
+   "endMs": 4522,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "it.",
+   "startMs": 4609,
+   "endMs": 4783,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "Sunlight",
+   "startMs": 5000,
+   "endMs": 5522,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "hits",
+   "startMs": 5609,
+   "endMs": 5783,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "the",
+   "startMs": 5870,
+   "endMs": 5957,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "panels,",
+   "startMs": 6217,
+   "endMs": 6522,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "and",
+   "startMs": 6565,
+   "endMs": 6739,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "each",
+   "startMs": 6826,
+   "endMs": 7000,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "one",
+   "startMs": 7087,
+   "endMs": 7261,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "makes",
+   "startMs": 7348,
+   "endMs": 7522,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "a",
+   "startMs": 7609,
+   "endMs": 7652,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "little",
+   "startMs": 7696,
+   "endMs": 7957,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "direct",
+   "startMs": 8043,
+   "endMs": 8391,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "current.",
+   "startMs": 8478,
+   "endMs": 9000,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "They're",
+   "startMs": 9435,
+   "endMs": 9609,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "wired",
+   "startMs": 9696,
+   "endMs": 9870,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "together,",
+   "startMs": 9957,
+   "endMs": 10565,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "so",
+   "startMs": 10652,
+   "endMs": 10739,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "their",
+   "startMs": 10826,
+   "endMs": 10913,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "power",
+   "startMs": 11000,
+   "endMs": 11261,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "adds",
+   "startMs": 11348,
+   "endMs": 11609,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "up",
+   "startMs": 11696,
+   "endMs": 11870,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "and",
+   "startMs": 11957,
+   "endMs": 12130,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "flows",
+   "startMs": 12304,
+   "endMs": 12478,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "down",
+   "startMs": 12565,
+   "endMs": 12739,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "a",
+   "startMs": 12826,
+   "endMs": 13000,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "single",
+   "startMs": 13130,
+   "endMs": 13261,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "cable.",
+   "startMs": 13435,
+   "endMs": 14087,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "But",
+   "startMs": 14304,
+   "endMs": 14391,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "your",
+   "startMs": 14478,
+   "endMs": 14652,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "house",
+   "startMs": 14739,
+   "endMs": 15000,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "runs",
+   "startMs": 15087,
+   "endMs": 15348,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "on",
+   "startMs": 15478,
+   "endMs": 15609,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "alternating",
+   "startMs": 15783,
+   "endMs": 16217,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "current,",
+   "startMs": 16304,
+   "endMs": 16913,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "so",
+   "startMs": 17043,
+   "endMs": 17174,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "that",
+   "startMs": 17261,
+   "endMs": 17348,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "cable",
+   "startMs": 17435,
+   "endMs": 17783,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "goes",
+   "startMs": 17870,
+   "endMs": 18043,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "to",
+   "startMs": 18130,
+   "endMs": 18217,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "an",
+   "startMs": 18261,
+   "endMs": 18304,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "inverter,",
+   "startMs": 18391,
+   "endMs": 19174,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "a",
+   "startMs": 19261,
+   "endMs": 19304,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "box",
+   "startMs": 19348,
+   "endMs": 19609,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "that",
+   "startMs": 19696,
+   "endMs": 19783,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "converts",
+   "startMs": 19957,
+   "endMs": 20217,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "direct",
+   "startMs": 20304,
+   "endMs": 20652,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "current",
+   "startMs": 20739,
+   "endMs": 21087,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "into",
+   "startMs": 21174,
+   "endMs": 21435,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "alternating",
+   "startMs": 21609,
+   "endMs": 22043,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "current.",
+   "startMs": 22130,
+   "endMs": 22565,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "From",
+   "startMs": 23000,
+   "endMs": 23174,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "the",
+   "startMs": 23217,
+   "endMs": 23261,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "inverter,",
+   "startMs": 23348,
+   "endMs": 23957,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "the",
+   "startMs": 24000,
+   "endMs": 24043,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "power",
+   "startMs": 24130,
+   "endMs": 24391,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "goes",
+   "startMs": 24478,
+   "endMs": 24739,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "to",
+   "startMs": 24783,
+   "endMs": 24826,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "your",
+   "startMs": 24870,
+   "endMs": 24913,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "breaker",
+   "startMs": 25000,
+   "endMs": 25348,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "panel,",
+   "startMs": 25435,
+   "endMs": 25957,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "and",
+   "startMs": 26043,
+   "endMs": 26130,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "from",
+   "startMs": 26217,
+   "endMs": 26304,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "there",
+   "startMs": 26391,
+   "endMs": 26652,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "to",
+   "startMs": 26739,
+   "endMs": 26826,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "your",
+   "startMs": 26913,
+   "endMs": 27000,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "lights,",
+   "startMs": 27087,
+   "endMs": 27609,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "your",
+   "startMs": 27652,
+   "endMs": 27696,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "fridge",
+   "startMs": 27783,
+   "endMs": 28217,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "and",
+   "startMs": 28304,
+   "endMs": 28478,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "your",
+   "startMs": 28522,
+   "endMs": 28565,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "air",
+   "startMs": 28652,
+   "endMs": 28739,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "conditioner.",
+   "startMs": 28826,
+   "endMs": 29652,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "Plug",
+   "startMs": 29870,
+   "endMs": 30043,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "in",
+   "startMs": 30130,
+   "endMs": 30217,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "more",
+   "startMs": 30304,
+   "endMs": 30478,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "things,",
+   "startMs": 30565,
+   "endMs": 31000,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "like",
+   "startMs": 31087,
+   "endMs": 31174,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "a",
+   "startMs": 31217,
+   "endMs": 31261,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "second",
+   "startMs": 31348,
+   "endMs": 31609,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "air",
+   "startMs": 31696,
+   "endMs": 31783,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "conditioner,",
+   "startMs": 31870,
+   "endMs": 32652,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "and",
+   "startMs": 32739,
+   "endMs": 32826,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "if",
+   "startMs": 32870,
+   "endMs": 32913,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "the",
+   "startMs": 33000,
+   "endMs": 33043,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "panels",
+   "startMs": 33087,
+   "endMs": 33435,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "can't",
+   "startMs": 33522,
+   "endMs": 33783,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "keep",
+   "startMs": 33870,
+   "endMs": 34043,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "up,",
+   "startMs": 34130,
+   "endMs": 34565,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "the",
+   "startMs": 34609,
+   "endMs": 34652,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "grid",
+   "startMs": 34739,
+   "endMs": 35000,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "quietly",
+   "startMs": 35087,
+   "endMs": 35609,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "covers",
+   "startMs": 35783,
+   "endMs": 35957,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "the",
+   "startMs": 36043,
+   "endMs": 36087,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "difference.",
+   "startMs": 36130,
+   "endMs": 36957,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "To",
+   "startMs": 37174,
+   "endMs": 37261,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "run",
+   "startMs": 37348,
+   "endMs": 37435,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "it",
+   "startMs": 37522,
+   "endMs": 37609,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "all",
+   "startMs": 37739,
+   "endMs": 37870,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "on",
+   "startMs": 37957,
+   "endMs": 38043,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "sun,",
+   "startMs": 38130,
+   "endMs": 38652,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "you",
+   "startMs": 38739,
+   "endMs": 38826,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "add",
+   "startMs": 38913,
+   "endMs": 39087,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "more",
+   "startMs": 39174,
+   "endMs": 39348,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "panels,",
+   "startMs": 39435,
+   "endMs": 40130,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "and",
+   "startMs": 40217,
+   "endMs": 40304,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "sometimes",
+   "startMs": 40391,
+   "endMs": 40913,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "a",
+   "startMs": 41000,
+   "endMs": 41087,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "bigger",
+   "startMs": 41174,
+   "endMs": 41435,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "inverter,",
+   "startMs": 41522,
+   "endMs": 42304,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "because",
+   "startMs": 42435,
+   "endMs": 42565,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "the",
+   "startMs": 42652,
+   "endMs": 42696,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "inverter",
+   "startMs": 42739,
+   "endMs": 43174,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "limits",
+   "startMs": 43261,
+   "endMs": 43609,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "how",
+   "startMs": 43696,
+   "endMs": 43870,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "much",
+   "startMs": 43957,
+   "endMs": 44130,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "power",
+   "startMs": 44217,
+   "endMs": 44478,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "can",
+   "startMs": 44565,
+   "endMs": 44739,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "flow",
+   "startMs": 44870,
+   "endMs": 45000,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "at",
+   "startMs": 45087,
+   "endMs": 45174,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "once.",
+   "startMs": 45261,
+   "endMs": 46043,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "At",
+   "startMs": 46130,
+   "endMs": 46217,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "noon",
+   "startMs": 46304,
+   "endMs": 46652,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "you",
+   "startMs": 46739,
+   "endMs": 46913,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "usually",
+   "startMs": 47000,
+   "endMs": 47348,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "make",
+   "startMs": 47478,
+   "endMs": 47609,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "more",
+   "startMs": 47696,
+   "endMs": 47783,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "than",
+   "startMs": 47870,
+   "endMs": 48043,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "you",
+   "startMs": 48130,
+   "endMs": 48217,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "use,",
+   "startMs": 48304,
+   "endMs": 48826,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "so",
+   "startMs": 48913,
+   "endMs": 49087,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "the",
+   "startMs": 49174,
+   "endMs": 49261,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "extra",
+   "startMs": 49348,
+   "endMs": 49696,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "flows",
+   "startMs": 49870,
+   "endMs": 50130,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "out",
+   "startMs": 50217,
+   "endMs": 50391,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "to",
+   "startMs": 50435,
+   "endMs": 50478,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "the",
+   "startMs": 50565,
+   "endMs": 50652,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "grid,",
+   "startMs": 50826,
+   "endMs": 51261,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "and",
+   "startMs": 51348,
+   "endMs": 51435,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "in",
+   "startMs": 51478,
+   "endMs": 51522,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "many",
+   "startMs": 51609,
+   "endMs": 51783,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "places",
+   "startMs": 51870,
+   "endMs": 52304,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "a",
+   "startMs": 52391,
+   "endMs": 52565,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "two-way",
+   "startMs": 52652,
+   "endMs": 52913,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "meter",
+   "startMs": 53087,
+   "endMs": 53348,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "counts",
+   "startMs": 53435,
+   "endMs": 53783,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "it.",
+   "startMs": 53870,
+   "endMs": 54391,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "At",
+   "startMs": 54478,
+   "endMs": 54565,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "night",
+   "startMs": 54652,
+   "endMs": 55087,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "the",
+   "startMs": 55174,
+   "endMs": 55261,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "panels",
+   "startMs": 55478,
+   "endMs": 55696,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "stop.",
+   "startMs": 55913,
+   "endMs": 56478,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "To",
+   "startMs": 56565,
+   "endMs": 56652,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "keep",
+   "startMs": 56739,
+   "endMs": 56913,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "running",
+   "startMs": 57043,
+   "endMs": 57174,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "on",
+   "startMs": 57261,
+   "endMs": 57348,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "your",
+   "startMs": 57435,
+   "endMs": 57522,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "own",
+   "startMs": 57609,
+   "endMs": 57783,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "power,",
+   "startMs": 57870,
+   "endMs": 58348,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "you",
+   "startMs": 58391,
+   "endMs": 58478,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "need",
+   "startMs": 58565,
+   "endMs": 58652,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "a",
+   "startMs": 58739,
+   "endMs": 58826,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "battery",
+   "startMs": 59000,
+   "endMs": 59174,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "bank",
+   "startMs": 59261,
+   "endMs": 59609,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "that",
+   "startMs": 59696,
+   "endMs": 59783,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "stores",
+   "startMs": 59870,
+   "endMs": 60217,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "the",
+   "startMs": 60304,
+   "endMs": 60391,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "extra",
+   "startMs": 60565,
+   "endMs": 60739,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "from",
+   "startMs": 60826,
+   "endMs": 61000,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "the",
+   "startMs": 61043,
+   "endMs": 61087,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "day.",
+   "startMs": 61174,
+   "endMs": 61870,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "Without",
+   "startMs": 62043,
+   "endMs": 62217,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "one,",
+   "startMs": 62304,
+   "endMs": 62710,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "you",
+   "startMs": 62768,
+   "endMs": 62826,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "pull",
+   "startMs": 62913,
+   "endMs": 63000,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "from",
+   "startMs": 63087,
+   "endMs": 63261,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "the",
+   "startMs": 63348,
+   "endMs": 63435,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "grid.",
+   "startMs": 63609,
+   "endMs": 64217,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "And",
+   "startMs": 64304,
+   "endMs": 64391,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "during",
+   "startMs": 64522,
+   "endMs": 64652,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "a",
+   "startMs": 64696,
+   "endMs": 64739,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "blackout?",
+   "startMs": 64913,
+   "endMs": 65696,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "A",
+   "startMs": 65783,
+   "endMs": 65870,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "normal",
+   "startMs": 66043,
+   "endMs": 66217,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "grid-tied",
+   "startMs": 66304,
+   "endMs": 66826,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "system",
+   "startMs": 66913,
+   "endMs": 67261,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "shuts",
+   "startMs": 67348,
+   "endMs": 67609,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "itself",
+   "startMs": 67696,
+   "endMs": 68130,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "off,",
+   "startMs": 68348,
+   "endMs": 68652,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "to",
+   "startMs": 68696,
+   "endMs": 68739,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "protect",
+   "startMs": 68913,
+   "endMs": 69087,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "the",
+   "startMs": 69174,
+   "endMs": 69261,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "workers",
+   "startMs": 69478,
+   "endMs": 69696,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "fixing",
+   "startMs": 69783,
+   "endMs": 70130,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "the",
+   "startMs": 70174,
+   "endMs": 70217,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "lines.",
+   "startMs": 70478,
+   "endMs": 71174,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "Only",
+   "startMs": 71348,
+   "endMs": 71522,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "batteries",
+   "startMs": 71609,
+   "endMs": 72043,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "with",
+   "startMs": 72087,
+   "endMs": 72130,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "a",
+   "startMs": 72217,
+   "endMs": 72304,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "hybrid",
+   "startMs": 72391,
+   "endMs": 72739,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "inverter",
+   "startMs": 72826,
+   "endMs": 73261,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "keep",
+   "startMs": 73348,
+   "endMs": 73522,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "your",
+   "startMs": 73609,
+   "endMs": 73696,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "lights",
+   "startMs": 73870,
+   "endMs": 74043,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "on.",
+   "startMs": 74130,
+   "endMs": 74739,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "Know",
+   "startMs": 74826,
+   "endMs": 75000,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "someone",
+   "startMs": 75130,
+   "endMs": 75261,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "thinking",
+   "startMs": 75348,
+   "endMs": 75609,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "about",
+   "startMs": 75696,
+   "endMs": 75870,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "solar?",
+   "startMs": 75957,
+   "endMs": 76739,
+   "pageBreakAfter": true
+  },
+  {
+   "word": "Send",
+   "startMs": 76826,
+   "endMs": 76913,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "them",
+   "startMs": 77000,
+   "endMs": 77087,
+   "pageBreakAfter": false
+  },
+  {
+   "word": "this.",
+   "startMs": 77174,
+   "endMs": 77783,
+   "pageBreakAfter": true
+  }
+ ],
+ "subtitles": {
+  "caption_props": {
+   "wordsPerPage": 4,
+   "fontSize": 64,
+   "highlightColor": "#22C55E"
+  }
+ },
+ "audio": {
+  "narration": {
+   "src": "/Users/ashleyarriaga/clam-tests/openmontage/projects/solar-residencial/assets/audio/voz.wav",
+   "volume": 1
+  }
+ }
+}

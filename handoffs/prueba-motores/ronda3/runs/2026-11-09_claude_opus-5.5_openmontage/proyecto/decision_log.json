@@ -1,0 +1,144 @@
+{
+ "version": "1.0",
+ "project_id": "solar-residencial",
+ "decisions": [
+  {
+   "decision_id": "d-001",
+   "stage": "proposal",
+   "category": "pipeline_selection",
+   "subject": "Pipeline for the brief",
+   "options_considered": [
+    {
+     "option_id": "animated-explainer",
+     "label": "animated-explainer",
+     "score": 0.8,
+     "reason": "Topic-to-explainer, production stability"
+    },
+    {
+     "option_id": "documentary-montage",
+     "label": "documentary-montage (beta)",
+     "score": 0.4,
+     "reason": "Free stock search returned few relevant solar clips"
+    }
+   ],
+   "selected": "animated-explainer",
+   "reason": "Mechanism explainer; stock retrieval too thin to carry a montage"
+  },
+  {
+   "decision_id": "d-002",
+   "stage": "proposal",
+   "category": "render_runtime_selection",
+   "subject": "Composition runtime",
+   "options_considered": [
+    {
+     "option_id": "remotion",
+     "label": "Remotion",
+     "score": 0.8,
+     "reason": "Explainer scene types + word captions ready"
+    },
+    {
+     "option_id": "hyperframes",
+     "label": "HyperFrames",
+     "score": 0.5,
+     "reason": "Available, but setup doctor timed out (20 s) \u2014 risky; separate HyperFrames run exists in the test"
+    },
+    {
+     "option_id": "ffmpeg",
+     "label": "FFmpeg",
+     "score": 0.1,
+     "reason": "Would be still-led; forbidden for motion brief"
+    }
+   ],
+   "selected": "remotion",
+   "reason": "Reliable on this machine; HyperFrames doctor timed out at setup"
+  },
+  {
+   "decision_id": "d-003",
+   "stage": "proposal",
+   "category": "composition_mode",
+   "subject": "Templated vs atelier",
+   "options_considered": [
+    {
+     "option_id": "templated",
+     "label": "Templated (stock scene types)",
+     "score": 0.7,
+     "reason": "OpenMontage's native look; isolates what the pipeline gives out of the box"
+    },
+    {
+     "option_id": "atelier",
+     "label": "Atelier (hand-authored)",
+     "score": 0.5,
+     "reason": "Would duplicate the separate Remotion run of this test"
+    }
+   ],
+   "selected": "templated",
+   "reason": "Test should show OpenMontage's own pipeline output, not a hand-authored Remotion piece"
+  },
+  {
+   "decision_id": "d-004",
+   "stage": "assets",
+   "category": "provider_selection",
+   "subject": "Visual sources (no paid keys)",
+   "options_considered": [
+    {
+     "option_id": "free_stock",
+     "label": "direct_clip_search: wikimedia/archive_org/openverse/mixkit/coverr",
+     "score": 0.6,
+     "reason": "Only keyless path"
+    },
+    {
+     "option_id": "image_gen",
+     "label": "Image generation",
+     "score": 0.0,
+     "reason": "0/31 configured \u2014 all need paid keys"
+    }
+   ],
+   "selected": "free_stock",
+   "reason": "Coverr returned 401; 31 clips downloaded, 3 relevant and non-ShareAlike used"
+  },
+  {
+   "decision_id": "d-005",
+   "stage": "script",
+   "category": "voice_selection",
+   "subject": "Narration",
+   "options_considered": [
+    {
+     "option_id": "kit_voice",
+     "label": "Fixed kit voice (ElevenLabs, from test)",
+     "score": 1.0,
+     "reason": "Test rule"
+    },
+    {
+     "option_id": "piper_tts",
+     "label": "Piper local TTS",
+     "score": 0.0,
+     "reason": "Not allowed: voice is fixed"
+    }
+   ],
+   "selected": "kit_voice",
+   "reason": "Prueba de motores ronda 3 fixes voz.wav"
+  },
+  {
+   "decision_id": "d-006",
+   "stage": "proposal",
+   "category": "approval_policy",
+   "subject": "Human approval gates",
+   "options_considered": [
+    {
+     "option_id": "test_brief",
+     "label": "Approvals pre-granted by the test brief",
+     "score": 1.0,
+     "reason": "Coordinator runs autonomously"
+    },
+    {
+     "option_id": "interactive",
+     "label": "Stop at each gate",
+     "score": 0.0,
+     "reason": "No human in the loop for this run"
+    }
+   ],
+   "selected": "test_brief",
+   "reason": "Vicente authorized the test; decisions logged instead of asked"
+  }
+ ]
+}

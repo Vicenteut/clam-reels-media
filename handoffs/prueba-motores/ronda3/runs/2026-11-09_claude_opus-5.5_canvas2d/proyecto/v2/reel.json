@@ -1,0 +1,8 @@
+{
+  "style": "classic",
+  "name": "ronda3-canvas-solar",
+  "presenter": false,
+  "captions": { "emphasize": ["direct", "alternating", "inverter", "grid", "battery", "blackout", "hybrid"], "emphasis": "#FFFFFF" },
+  "theme": { "accent": "#2BD9A0" },
+  "language": "en"
+}
