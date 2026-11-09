@@ -1,0 +1,9 @@
+Ever wondered where the power from those roof panels actually goes? Let's follow it.
+Sunlight hits the panels, and each one makes a little direct current. They're wired together, so their power adds up and flows down a single cable.
+But your house runs on alternating current, so that cable goes to an inverter, a box that converts direct current into alternating current.
+From the inverter, the power goes to your breaker panel, and from there to your lights, your fridge and your air conditioner.
+Plug in more things, like a second air conditioner, and if the panels can't keep up, the grid quietly covers the difference. To run it all on sun, you add more panels, and sometimes a bigger inverter, because the inverter limits how much power can flow at once.
+At noon you usually make more than you use, so the extra flows out to the grid, and in many places a two-way meter counts it.
+At night the panels stop. To keep running on your own power, you need a battery bank that stores the extra from the day. Without one, you pull from the grid.
+And during a blackout? A normal grid-tied system shuts itself off, to protect the workers fixing the lines. Only batteries with a hybrid inverter keep your lights on.
+Know someone thinking about solar? Send them this.
